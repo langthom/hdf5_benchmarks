@@ -9,6 +9,8 @@ add_executable(h5_bench
   configuration.cpp
   C_multiple_datasets.h
   C_multiple_datasets.cpp
+  C_single_dataset.h
+  C_single_dataset.cpp
 )
 
 # TODO: (hdf5::hdf5 (C), hdf5::hdf5_cpp (C++), hdf5::hdf_hl (C HL), hdf5::hdf_hl_cpp, HighFive)

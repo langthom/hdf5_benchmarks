@@ -14,16 +14,25 @@ std::string formatedString(char const* format, Args&&... args) {
 
 struct Configuration {
   std::array<uint64_t, 3> tileDims;
-  int numTiles;
-  float* constantPtr;
+  std::array<uint64_t, 3> numTiles;
   std::array<uint64_t, 3>* chunkSizes;
+  bool random;
 
-  std::string getFilename() const {
-    return formatedString("D:/bench_%dx%dx%d_n%d_r%d_c%d.h5", tileDims[0], tileDims[1], tileDims[2], numTiles, (constantPtr == nullptr), chunkSizes == nullptr ? 0 : chunkSizes->at(0));
+  inline std::string getFilename() const {
+    auto s = this->globalShape();
+    return formatedString("D:/bench_%dx%dx%d_r%d_c%d.h5", s[0], s[1], s[2], random, chunkSizes == nullptr ? 0 : chunkSizes->at(0));
   }
 
-  std::string repr() const {
-    return formatedString("Configuration(%d tiles of shape = %dx%dx%d; random: %s; chunking: %d)", numTiles, tileDims[0], tileDims[1], tileDims[2], (constantPtr == nullptr), chunkSizes == nullptr ? 0 : chunkSizes->at(0));
+  inline std::string repr() const {
+    return formatedString("Configuration(%dx%dx%d tiles of shape = %dx%dx%d; random: %s; chunking: %d)", numTiles[0], numTiles[1], numTiles[2], tileDims[0], tileDims[1], tileDims[2], random, chunkSizes == nullptr ? 0 : chunkSizes->at(0));
+  }
+
+  inline std::array<uint64_t, 3> globalShape() const {
+    auto s = tileDims;
+    s[0] *= numTiles[0];
+    s[1] *= numTiles[1];
+    s[2] *= numTiles[2];
+    return s;
   }
 };
 
