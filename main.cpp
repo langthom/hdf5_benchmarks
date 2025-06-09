@@ -12,8 +12,8 @@ typedef void(*read_write_fun_t)(Configuration const& config, double* measuredSec
 
 void benchmark(std::string const& ID, read_write_fun_t read_fun, read_write_fun_t write_fun, std::ostream& measurements, Configuration const& config) {
   std::array<double, 7> times;
-  C_multiple_datasets_write(config, times.data());
-  C_multiple_datasets_read(config, times.data() + 2);
+  write_fun(config, times.data());
+  read_fun(config, times.data() + 2);
 
   measurements << ID << "," << config.tileDims[0] << ',' << config.numTiles << ',' << (config.chunkSizes ? config.chunkSizes->at(0) : 0) << ',' << (config.constantPtr == nullptr) << ',';
   for (int i = 0; i < times.size(); ++i) {
