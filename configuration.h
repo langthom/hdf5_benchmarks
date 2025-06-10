@@ -17,10 +17,11 @@ struct Configuration {
   std::array<uint64_t, 3> numTiles;
   std::array<uint64_t, 3>* chunkSizes;
   bool random;
+  int compressionLevel;
 
   inline std::string getFilename() const {
     auto s = this->globalShape();
-    return formatedString("D:/bench_%dx%dx%d_r%d_c%d.h5", s[0], s[1], s[2], random, chunkSizes == nullptr ? 0 : chunkSizes->at(0));
+    return formatedString("D:/bench_%dx%dx%d_r%d_ch%d_c%d.h5", s[0], s[1], s[2], random, chunkSizes == nullptr ? 0 : chunkSizes->at(0), compressionLevel);
   }
 
   inline std::string repr() const {

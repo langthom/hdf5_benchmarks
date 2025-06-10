@@ -35,6 +35,8 @@ void C_multiple_datasets_write(Configuration const& config, double* measurementS
   if (config.chunkSizes) {
     dcplId = H5Pcreate(H5P_DATASET_CREATE);
     error  = H5Pset_chunk(dcplId, 3, config.chunkSizes->data());
+    error  = H5Pset_fill_time(dcplId, H5D_FILL_TIME_NEVER);
+    error  = H5Pset_deflate(dcplId, config.compressionLevel);
   }
 
   for (int tileZ = 0; tileZ < config.numTiles[0]; ++tileZ) {
@@ -98,148 +100,116 @@ void C_multiple_datasets_read(Configuration const& config, double* measurementsS
 
 
   // Read a Roi of shape 128x128x128 crossing into 8 tiles.
-  // TODO
-
-
-  // Read each XY slice.
+  // Corresponds to a 64x64x64 Roi in each tile.
   {
-    std::array<uint64_t, 3> origin{ 0, 0, 0 };
-    std::array<uint64_t, 3> localOrigin = origin;
-    std::array<uint64_t, 3> dim = config.globalShape();  dim[0] = 1;
-    std::array<uint64_t, 3> localDim = config.tileDims;  localDim[0] = 1;
-    readData.reset(new float[dim[1]*dim[2]]);
-    auto localSliceData = std::make_unique<float[]>(localDim[1] * localDim[2]);
+    auto globalRoiData = std::make_unique<float[]>(128 * 128 * 128);
+    std::array<uint64_t, 3> localRoiDim{64, 64, 64};
+    auto localRoiReadData = std::make_unique<float[]>(localRoiDim[0]*localRoiDim[1]*localRoiDim[2]);
+    hid_t localRoiMemSpaceId = H5Screate_simple(3, localRoiDim.data(), NULL);
+
+    auto __read = [&](int tileZ, int tileY, int tileX, std::array<uint64_t, 3> const& localRoiOrigin) {
+      std::string const datasetPath = std::string("/data/tile") + std::to_string(tileZ) + std::to_string(tileY) + std::to_string(tileX);
+
+      hid_t datasetId = H5Dopen(groupId, datasetPath.c_str(), H5P_DEFAULT);
+      hid_t filespaceId = H5Dget_space(datasetId);
+
+      error = H5Sselect_hyperslab(filespaceId, H5S_SELECT_SET, localRoiOrigin.data(), NULL, localRoiDim.data(), NULL);
+      error = H5Dread(datasetId, H5T_NATIVE_FLOAT, localRoiMemSpaceId, filespaceId, H5P_DEFAULT, localRoiReadData.get());
+      error = H5Dclose(datasetId);
+      error = H5Sclose(filespaceId);
+
+      // copy to target
+      auto tileStart = globalRoiData.get() + ((tileZ * 128) + tileY) * 128 + tileX;
+      for (int z = 0; z < 64; ++z) {
+        for (int y = 0; y < 64; ++y) {
+          auto d = tileStart + (z * 128 + y) * 128;
+          auto s = localRoiReadData.get() + ((z*64)+y)*64;
+          std::memcpy(d, s, 64 * sizeof(float));
+        }
+      }
+    };
+
+    auto roiReadStart = std::chrono::high_resolution_clock::now();
+    __read(0, 0, 0, {config.tileDims[0]-64, config.tileDims[1]-64, config.tileDims[2]-64});
+    __read(0, 0, 1, {config.tileDims[0]-64, config.tileDims[1]-64,                     0});
+    __read(0, 1, 0, {config.tileDims[0]-64,                     0, config.tileDims[2]-64});
+    __read(0, 1, 1, {config.tileDims[0]-64,                     0,                     0});
+    __read(1, 0, 0, {0,                     config.tileDims[1]-64, config.tileDims[2]-64});
+    __read(1, 0, 1, {0,                     config.tileDims[1]-64,                     0});
+    __read(1, 1, 0, {0,                     0,                     config.tileDims[2]-64});
+    __read(1, 1, 1, {0,                     0,                                         0});
+    auto roiReadEnd = std::chrono::high_resolution_clock::now();
+    readRoiSecs.push_back(std::chrono::duration<double>(roiReadEnd - roiReadStart).count());
+
+    H5Sclose(localRoiMemSpaceId);
+  }
+
+  auto readSlice = [&](int orientation, std::vector<double>& timesSecs) {
+    std::array<uint64_t, 3> localOrigin{0, 0, 0};
+    std::array<uint64_t, 3> localDim  = config.tileDims;
+    std::array<uint64_t, 3> globalDim = config.globalShape();
+    std::array<uint64_t, 3> index;
+
+    uint64_t const numSlices = globalDim[orientation];
+    uint64_t numTiles1, numTiles2, localRowDim, localColDim;
+
+    switch (orientation) {
+    case 0/*XY*/: numTiles1 = config.numTiles[1], numTiles2 = config.numTiles[2], localRowDim = 1, localColDim = 2; break;
+    case 1/*XZ*/: numTiles1 = config.numTiles[0], numTiles2 = config.numTiles[2], localRowDim = 0, localColDim = 2; break;
+    case 2/*YZ*/: numTiles1 = config.numTiles[0], numTiles2 = config.numTiles[1], localRowDim = 0, localColDim = 1; break;
+    }
+
+    localDim[orientation] = 1;
+    globalDim[orientation] = 1;
+    auto localReadData   = std::make_unique<float[]>( localDim[0] *  localDim[1] *  localDim[2]);
+    auto globalSliceData = std::make_unique<float[]>(globalDim[0] * globalDim[1] * globalDim[2]);
+
 
     hid_t localSliceMemorySpaceId = H5Screate_simple(3, localDim.data(), NULL);
 
-    uint64_t numZ = config.globalShape()[0];
-    for (uint64_t z = 0; z < numZ; ++z) {
-      auto xyReadBegin = std::chrono::high_resolution_clock::now();
+    for (uint64_t sliceIx = 0; sliceIx < numSlices; ++sliceIx) {
+      auto sliceStart = std::chrono::high_resolution_clock::now();
+      auto sliceTile   = sliceIx / config.tileDims[orientation];
+      auto sliceInTile = sliceIx % config.tileDims[orientation];
+      localOrigin[orientation] = sliceInTile;
 
-      auto zTile = z / config.tileDims[0];
-      auto zInTile = z % config.tileDims[0];
-      std::string const datasetPathPrefix = std::string("/data/tile") + std::to_string(zTile);
-      localOrigin[0] = zInTile;
+      for (uint64_t rowTileIx = 0; rowTileIx < numTiles1; ++rowTileIx) {
+        for (uint64_t colTileIx = 0; colTileIx < numTiles2; ++colTileIx) {
+          switch (orientation) {
+          case 0/*XY*/: index[0] = sliceTile, index[1] = rowTileIx, index[2] = colTileIx; break;
+          case 1/*XZ*/: index[0] = rowTileIx, index[1] = sliceTile, index[2] = colTileIx; break;
+          case 2/*YZ*/: index[0] = rowTileIx, index[1] = colTileIx, index[2] = sliceTile; break;
+          }
+          std::string const datasetPath = std::string("/data/tile") + std::to_string(index[0]) + std::to_string(index[1]) + std::to_string(index[2]);
 
-      for (int tileY = 0; tileY < config.numTiles[1]; ++tileY) {
-        for (int tileX = 0; tileX < config.numTiles[2]; ++tileX) {
-          std::string const datasetPath = datasetPathPrefix + std::to_string(tileY) + std::to_string(tileX);
+          hid_t datasetId = H5Dopen(groupId, datasetPath.c_str(), H5P_DEFAULT);
+          hid_t filespaceId = H5Dget_space(datasetId);
 
-          hid_t datasetId = H5Dopen2(groupId, datasetPath.c_str(), H5P_DEFAULT);
-          hid_t fileSpaceId = H5Dget_space(datasetId);
-          error = H5Sselect_hyperslab(fileSpaceId, H5S_SELECT_SET, localOrigin.data(), NULL, localDim.data(), NULL);
-          error = H5Dread(datasetId, H5T_NATIVE_FLOAT, localSliceMemorySpaceId, fileSpaceId, H5P_DEFAULT, localSliceData.get());
+          error = H5Sselect_hyperslab(filespaceId, H5S_SELECT_SET, localOrigin.data(), NULL, localDim.data(), NULL);
+          error = H5Dread(datasetId, H5T_NATIVE_FLOAT, localSliceMemorySpaceId, filespaceId, H5P_DEFAULT, localReadData.get());
           error = H5Dclose(datasetId);
-          error = H5Sclose(fileSpaceId);
+          error = H5Sclose(filespaceId);
 
           // need to manually copy the locally read data into the correct position in the global slice.
-          for (int row = 0; row < localDim[1]; ++row) {
-            auto r = readData.get() + (tileY * localDim[1]*localDim[2]) + (tileX * localDim[2]);
-            auto s = localSliceData.get() + row * localDim[2];
-            std::memcpy(r, s, localDim[2] * sizeof(float));
+          // we implement this to make a fair comparison against other methods
+          for (int _row = 0; _row < localDim[localRowDim]; ++_row) {
+            auto d = globalSliceData.get() + (rowTileIx + _row) * globalDim[localRowDim] + colTileIx * globalDim[localColDim];
+            auto s = localReadData.get() + _row * localDim[localColDim];
+            std::memcpy(d, s, localDim[localColDim] * sizeof(float));
           }
         }
       }
 
-      auto xyReadEnd = std::chrono::high_resolution_clock::now();
-      readXYSecs.push_back(std::chrono::duration<double>(xyReadEnd - xyReadBegin).count());
+      auto sliceEnd = std::chrono::high_resolution_clock::now();
+      timesSecs.push_back(std::chrono::duration<double>(sliceEnd - sliceStart).count());
     }
 
     error = H5Sclose(localSliceMemorySpaceId);
-  }
+  };
 
-
-  // Read each XZ slice.
-  {
-    std::array<uint64_t, 3> origin{ 0, 0, 0 };
-    std::array<uint64_t, 3> localOrigin = origin;
-    std::array<uint64_t, 3> dim = config.globalShape();  dim[1] = 1;
-    std::array<uint64_t, 3> localDim = config.tileDims;  localDim[1] = 1;
-    readData.reset(new float[dim[0]*dim[2]]);
-    auto localSliceData = std::make_unique<float[]>(localDim[0] * localDim[2]);
-
-    hid_t localSliceMemorySpaceId = H5Screate_simple(3, localDim.data(), NULL);
-
-    uint64_t numY = config.globalShape()[1];
-    for (uint64_t y = 0; y < numY; ++y) {
-      auto xzReadBegin = std::chrono::high_resolution_clock::now();
-
-      auto yTile = y / config.tileDims[1];
-      auto yInTile = y % config.tileDims[1];
-      localOrigin[1] = yInTile;
-
-      for (int tileZ = 0; tileZ < config.numTiles[0]; ++tileZ) {
-        for (int tileX = 0; tileX < config.numTiles[2]; ++tileX) {
-          std::string const datasetPath = std::string("/data/tile") + std::to_string(tileZ) + std::to_string(yTile) + std::to_string(tileX);
-
-          hid_t datasetId = H5Dopen2(groupId, datasetPath.c_str(), H5P_DEFAULT);
-          hid_t fileSpaceId = H5Dget_space(datasetId);
-          error = H5Sselect_hyperslab(fileSpaceId, H5S_SELECT_SET, localOrigin.data(), NULL, localDim.data(), NULL);
-          error = H5Dread(datasetId, H5T_NATIVE_FLOAT, localSliceMemorySpaceId, fileSpaceId, H5P_DEFAULT, localSliceData.get());
-          error = H5Dclose(datasetId);
-          error = H5Sclose(fileSpaceId);
-
-          // need to manually copy the locally read data into the correct position in the global slice.
-          for (int row = 0; row < localDim[0]; ++row) {
-            auto r = readData.get() + (tileZ * localDim[0]*localDim[2]) + (tileX * localDim[2]);
-            auto s = localSliceData.get() + row * localDim[2];
-            std::memcpy(r, s, localDim[2] * sizeof(float));
-          }
-        }
-      }
-
-      auto xzReadEnd = std::chrono::high_resolution_clock::now();
-      readXZSecs.push_back(std::chrono::duration<double>(xzReadEnd - xzReadBegin).count());
-    }
-
-    error = H5Sclose(localSliceMemorySpaceId);
-  }
-
-  // Read each YZ slice.
-  {
-    std::array<uint64_t, 3> origin{ 0, 0, 0 };
-    std::array<uint64_t, 3> localOrigin = origin;
-    std::array<uint64_t, 3> dim = config.globalShape();  dim[2] = 1;
-    std::array<uint64_t, 3> localDim = config.tileDims;  localDim[2] = 1;
-    readData.reset(new float[dim[0]*dim[1]]);
-    auto localSliceData = std::make_unique<float[]>(localDim[0] * localDim[1]);
-
-    hid_t localSliceMemorySpaceId = H5Screate_simple(3, localDim.data(), NULL);
-
-    uint64_t numX = config.globalShape()[1];
-    for (uint64_t x = 0; x < numX; ++x) {
-      auto yzReadBegin = std::chrono::high_resolution_clock::now();
-
-      auto xTile = x / config.tileDims[1];
-      auto xInTile = x % config.tileDims[1];
-      localOrigin[2] = xInTile;
-
-      for (int tileZ = 0; tileZ < config.numTiles[0]; ++tileZ) {
-        for (int tileY = 0; tileY < config.numTiles[1]; ++tileY) {
-          std::string const datasetPath = std::string("/data/tile") + std::to_string(tileZ) + std::to_string(tileY) + std::to_string(xTile);
-
-          hid_t datasetId = H5Dopen2(groupId, datasetPath.c_str(), H5P_DEFAULT);
-          hid_t fileSpaceId = H5Dget_space(datasetId);
-          error = H5Sselect_hyperslab(fileSpaceId, H5S_SELECT_SET, localOrigin.data(), NULL, localDim.data(), NULL);
-          error = H5Dread(datasetId, H5T_NATIVE_FLOAT, localSliceMemorySpaceId, fileSpaceId, H5P_DEFAULT, localSliceData.get());
-          error = H5Dclose(datasetId);
-          error = H5Sclose(fileSpaceId);
-
-          // need to manually copy the locally read data into the correct position in the global slice.
-          for (int row = 0; row < localDim[0]; ++row) {
-            auto r = readData.get() + (tileZ * localDim[0]*localDim[1]) + (tileY * localDim[1]);
-            auto s = localSliceData.get() + row * localDim[1];
-            std::memcpy(r, s, localDim[1] * sizeof(float));
-          }
-        }
-      }
-
-      auto yzReadEnd = std::chrono::high_resolution_clock::now();
-      readYZSecs.push_back(std::chrono::duration<double>(yzReadEnd - yzReadBegin).count());
-    }
-
-    error = H5Sclose(localSliceMemorySpaceId);
-  }
+  readSlice(0/*XY*/, readXYSecs);
+  readSlice(1/*XZ*/, readXZSecs);
+  readSlice(2/*YZ*/, readYZSecs);
 
   error = H5Gclose(groupId);
   error = H5Fclose(fileId);

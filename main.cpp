@@ -27,19 +27,18 @@ void benchmark(std::string const& ID, read_write_fun_t read_fun, read_write_fun_
 
 int main(int argc, char** argv) {
 
-  float constant = 42.7;
   std::vector<std::array<uint64_t, 3>> tileDimsVec{
-    {256,256,256},// {512,512,512}
+    {256,256,256}, //{512,512,512}
   };
   std::vector<std::array<uint64_t, 3>> numTilesVec{
-    {2,2,2}, //8, 16 
+    {2,2,2}, //{8,8,8},
   };
   std::vector<std::array<uint64_t, 3>> chunkSizesVec{
-    {64,64,64}, {128,128,128}, {256,256,256}
+    {64,64,64}, //{128,128,128}, {256,256,256}
   };
-  std::vector<std::array<uint64_t, 3>*> chunkSizesPtrVec{
-    nullptr, //&chunkSizesVec[0], &chunkSizesVec[1], &chunkSizesVec[2]
-  };
+  std::vector<std::array<uint64_t, 3>*> chunkSizesPtrVec;
+  //chunkSizesPtrVec.push_back(nullptr);
+  for (auto& cs : chunkSizesVec) chunkSizesPtrVec.push_back(std::addressof(cs));
 
   std::ofstream measurements{"D:/h5_bench_measurements.txt"};
   measurements << "Method,Tile dim,Number of tiles,Chunk size,Random?,Write (total),Write (avg),Read (tile),Read (roi),Read (slice XY),Read (slice XZ),Read (slice YZ)\n";
@@ -53,12 +52,11 @@ int main(int argc, char** argv) {
           config.numTiles    = numTiles;
           config.tileDims    = tileDims;
           config.random      = random;
-          config.chunkSizes  = nullptr;
+          config.chunkSizes  = chunkSizesPtr;
+          config.compressionLevel = 7;
 
           benchmark("CMD", C_multiple_datasets_read, C_multiple_datasets_write, measurements, config);
           benchmark("CSD", C_single_dataset_read, C_single_dataset_write, measurements, config);
-
-          return 1;
 
           //std::filesystem::remove(config.getFilename());
         }
