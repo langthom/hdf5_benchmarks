@@ -29,8 +29,7 @@ void C_multiple_datasets_write(Configuration const& config, double* measurementS
   auto globalStart = std::chrono::high_resolution_clock::now();
 
   herr_t error;
-  hid_t fileId  = H5Fcreate(targetH5File.c_str(), H5F_ACC_TRUNC, H5P_DEFAULT, H5P_DEFAULT);
-  hid_t groupId = H5Gcreate(fileId, "data", H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
+
   hid_t dcplId  = H5P_DEFAULT; // dcpl == dataset creation property list
   if (config.chunkSizes) {
     dcplId = H5Pcreate(H5P_DATASET_CREATE);
@@ -38,6 +37,29 @@ void C_multiple_datasets_write(Configuration const& config, double* measurementS
     error  = H5Pset_fill_time(dcplId, H5D_FILL_TIME_NEVER);
     error  = H5Pset_deflate(dcplId, config.compressionLevel);
   }
+
+  // Set caching for all datasets
+  hid_t faplId = H5Pcreate(H5P_FILE_ACCESS); // file access property list
+  {
+    int _dummy;
+    size_t n_slots, n_bytes;
+    double chunkPreemption;
+    H5Pget_cache(faplId, &_dummy, &n_slots, &n_bytes, &chunkPreemption);
+    chunkPreemption = 1.0;
+    n_bytes = config.cacheSize();
+    H5Pset_cache(faplId, _dummy, n_slots, n_bytes, chunkPreemption);
+  }
+
+
+  // Set creation properties, leaving all meta data on all page
+  hid_t fcplId = H5Pcreate(H5P_FILE_CREATE);
+  {
+    error = H5Pset_file_space_strategy(fcplId, H5F_FSPACE_STRATEGY_PAGE, true, 256);
+    error = H5Pset_file_space_page_size(fcplId, 4096);
+  }
+
+  hid_t fileId  = H5Fcreate(targetH5File.c_str(), H5F_ACC_TRUNC, fcplId, faplId);
+  hid_t groupId = H5Gcreate2(fileId, "data", H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT);
 
   for (int tileZ = 0; tileZ < config.numTiles[0]; ++tileZ) {
     for (int tileY = 0; tileY < config.numTiles[1]; ++tileY) {
@@ -59,6 +81,7 @@ void C_multiple_datasets_write(Configuration const& config, double* measurementS
   }
 
   if (config.chunkSizes) error = H5Pclose(dcplId);
+  error = H5Pclose(fcplId);
   error = H5Gclose(groupId);
   error = H5Fclose(fileId);
   RETURN_ON_ERROR;
@@ -75,7 +98,20 @@ void C_multiple_datasets_read(Configuration const& config, double* measurementsS
   std::vector<double> readTileSecs, readRoiSecs, readXYSecs, readXZSecs, readYZSecs;
 
   herr_t error;
-  hid_t fileId  = H5Fopen(fname.c_str(), H5F_ACC_RDONLY, H5P_DEFAULT);
+
+  // Set caching for all datasets
+  hid_t faplId = H5Pcreate(H5P_FILE_ACCESS); // file access property list
+  {
+    int _dummy;
+    size_t n_slots, n_bytes;
+    double chunkPreemption;
+    H5Pget_cache(faplId, &_dummy, &n_slots, &n_bytes, &chunkPreemption);
+    chunkPreemption = 1.0;
+    n_bytes = config.cacheSize();
+    H5Pset_cache(faplId, _dummy, n_slots, n_bytes, chunkPreemption);
+  }
+
+  hid_t fileId  = H5Fopen(fname.c_str(), H5F_ACC_RDONLY, faplId);
   hid_t groupId = H5Gopen(fileId, "/data", H5P_DEFAULT);
   
   // Read full tiles
@@ -87,7 +123,7 @@ void C_multiple_datasets_read(Configuration const& config, double* measurementsS
         auto tileReadBegin = std::chrono::high_resolution_clock::now();
 
         std::string const dataGroupPath = std::string("/data/tile") + std::to_string(tileZ) + std::to_string(tileY) + std::to_string(tileX);
-        hid_t dataId = H5Dopen(groupId, dataGroupPath.c_str(), H5P_DEFAULT);
+        hid_t dataId = H5Dopen2(groupId, dataGroupPath.c_str(), H5P_DEFAULT);
         error = H5Dread(dataId, H5T_IEEE_F32LE, H5S_ALL, H5S_ALL, H5P_DEFAULT, readData.get());
         error = H5Dclose(dataId);
         RETURN_ON_ERROR;
@@ -167,7 +203,7 @@ void C_multiple_datasets_read(Configuration const& config, double* measurementsS
 
     hid_t localSliceMemorySpaceId = H5Screate_simple(3, localDim.data(), NULL);
 
-    for (uint64_t sliceIx = 0; sliceIx < numSlices; ++sliceIx) {
+    for (uint64_t sliceIx = 0; sliceIx < numSlices; sliceIx += 32) {
       auto sliceStart = std::chrono::high_resolution_clock::now();
       auto sliceTile   = sliceIx / config.tileDims[orientation];
       auto sliceInTile = sliceIx % config.tileDims[orientation];

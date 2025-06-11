@@ -6,10 +6,10 @@
 
 template<class... Args>
 std::string formatedString(char const* format, Args&&... args) {
-  auto size = std::snprintf(nullptr, 0, format, std::forward<Args>(args)...);
-  std::string str(size + 1, '\0');
-  std::sprintf(&str[0], format, std::forward<Args>(args)...);
-  return str;
+  auto size = std::snprintf(nullptr, 0, format, std::forward<Args>(args)...) + 1;
+  auto buf = std::make_unique<char[]>(size);
+  std::snprintf(buf.get(), size, format, std::forward<Args>(args)...);
+  return std::string(buf.get(), buf.get() + size - 1);
 }
 
 struct Configuration {
@@ -18,10 +18,11 @@ struct Configuration {
   std::array<uint64_t, 3>* chunkSizes;
   bool random;
   int compressionLevel;
+  std::string pathPrefix;
 
   inline std::string getFilename() const {
     auto s = this->globalShape();
-    return formatedString("D:/bench_%dx%dx%d_r%d_ch%d_c%d.h5", s[0], s[1], s[2], random, chunkSizes == nullptr ? 0 : chunkSizes->at(0), compressionLevel);
+    return formatedString("%sbench_%dx%dx%d_r%d_ch%d_c%d.h5", pathPrefix, s[0], s[1], s[2], random, chunkSizes == nullptr ? 0 : chunkSizes->at(0), compressionLevel);
   }
 
   inline std::string repr() const {
@@ -34,6 +35,11 @@ struct Configuration {
     s[1] *= numTiles[1];
     s[2] *= numTiles[2];
     return s;
+  }
+
+  inline size_t cacheSize() const {
+    constexpr size_t defaultCacheSize = 4 * 1024 * 1024;
+    return chunkSizes ? (chunkSizes->at(0) * chunkSizes->at(1) * chunkSizes->at(2) * sizeof(float)) : defaultCacheSize;
   }
 };
 
