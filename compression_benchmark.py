@@ -123,7 +123,7 @@ def run(vol_size, chunk_sizes, compression_method, data, sparsity, read_fixed_ro
     
     data = {
       'file_size_MiB':           file_size_MiB,
-      'compression':             compression_factor(file_size_MiB, vol_size),  # compression factor compared to a REK storing the same information
+      'compression':             compression_factor(file_size_MiB, vol_size),  # compression factor compared to a binary blob storing the same information
       'throughputs_MiBps': {
         'write':                 throughput(n_voxels,                                                             write_time),
         'read_roi_contiguous':   throughput(read_fixed_roi_size[0]*read_fixed_roi_size[1]*read_fixed_roi_size[2], avg_read_time_fixed_cont),
