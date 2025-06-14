@@ -173,5 +173,8 @@ if __name__ == '__main__':
     
     benchmark_data[method_name] = sparse_bench_data
   
-  with open("D:/h5_compression_benchmark_sparsity.json", "w") as bench_file:
+  if not os.path.exists('results'):
+    os.mkdir('results')
+  
+  with open("results/h5_compression_benchmark_sparsity.json", "w") as bench_file:
     json.dump(benchmark_data, bench_file, indent=2)
