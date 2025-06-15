@@ -22,7 +22,7 @@ json layout:
 
 """
 
-def throughput_plots(bench_data):
+def throughput_plots(bench_data, fname_suffix):
   # compression methods -> by color
   # chunk sizes         -> by marker 
   # sparsities          -> by marker size
@@ -51,11 +51,11 @@ def throughput_plots(bench_data):
   plt.ylabel("Write throughput [MiB/s]")
   plt.legend(loc='upper center', bbox_to_anchor=(0.5, -0.05), fancybox=True, shadow=True, ncol=len(methods)//2)
   plt.tight_layout()
-  plt.savefig('results/throughput_plot.png', dpi=600, bbox_inches=0)
+  plt.savefig(f'results/throughput_plot{fname_suffix}.png', dpi=600, bbox_inches=0)
 
 
 
-def compression_plots(bench_data):
+def compression_plots(bench_data, fname_suffix):
   # One plot per data sparsity
   #   X: compression method 
   #   Y: compression factor 
@@ -86,7 +86,7 @@ def compression_plots(bench_data):
     ax.set_ylabel("Compression factor")
     ax.set_xticks(X + (len(chunk_sizes)-1) * bar_width/2, methods, rotation=22)
     ax.legend(loc='upper right')
-    plt.savefig(f'results/compression_{sparsity}.png', dpi=600, bbox_inches=0)
+    plt.savefig(f'results/compression{fname_suffix}_{sparsity}.png', dpi=600, bbox_inches=0)
 
 
   # Heatmap plots (one for each sparsity)
@@ -146,26 +146,26 @@ def compression_plots(bench_data):
     plt.ylabel("Chunk size (side length)")
     plt.title(f"Write/read throughputs (color-coded; [MiB/s]) and compression factors (annotations) for sparsity {sparsity}")
     plt.tight_layout()
-    plt.savefig(f'results/throughputs_and_compressions_{sparsity}.png', dpi=600, bbox_inches=0)
+    plt.savefig(f'results/throughputs_and_compressions{fname_suffix}_{sparsity}.png', dpi=600, bbox_inches=0)
 
 
 
-def plot_results(bench_json):
+def plot_results(bench_json, fname_suffix):
   with open(bench_json, "r") as f:
     bench_data = json.load(f)
   
-  throughput_plots(bench_data)
-  compression_plots(bench_data)
+  throughput_plots(bench_data, fname_suffix)
+  compression_plots(bench_data, fname_suffix)
 
 
 if __name__ == '__main__':
   import sys
   if len(sys.argv) < 2:
-    print(f"Usage: {sys.argv[0]} <benchmark-results.json>")
+    print(f"Usage: {sys.argv[0]} <benchmark-results.json> [<fname-suffix>]")
     exit(1)
   
   if not os.path.exists('results'):
     os.mkdir('results')
   
-  plot_results(sys.argv[1])
+  plot_results(sys.argv[1], "" if len(sys.argv) < 3 else "_" + sys.argv[2])
   
