@@ -1,0 +1,136 @@
+
+import os
+import tqdm
+import time
+import json
+import tempfile
+import numpy as np
+
+import h5py
+import hdf5plugin
+
+# ---------------------------------------------------------------------------------------------------------------------------
+
+def sparsify_data(data, sparsity):
+  rng = np.random.default_rng(seed=42)
+  N = int(data.size * sparsity)
+  z = rng.integers(low=0, high=data.shape[0], endpoint=False, size=N)
+  y = rng.integers(low=0, high=data.shape[1], endpoint=False, size=N)
+  x = rng.integers(low=0, high=data.shape[2], endpoint=False, size=N)
+  data[z,y,x] = 0
+  return data
+
+# ---------------------------------------------------------------------------------------------------------------------------
+
+def throughput(size, secs): # float data; [MiB/s]
+  return np.around(size * 4 / 2**20 / secs, decimals=1)
+
+def time_secs(func, *args, **kwargs):
+  begin = time.perf_counter_ns()
+  func(*args, **kwargs)
+  end = time.perf_counter_ns()
+  return np.float64(end - begin) / 1e9
+
+def compression_factor(compressed_size_MiB, vol_size):
+  vol_rek_size = np.prod(vol_size) * 4 + 2048 # float data, in [bytes]
+  vol_rek_size_MiB = np.float64(vol_rek_size) / 2**20
+  return np.around(vol_rek_size_MiB / compressed_size_MiB, decimals=1)
+
+# ---------------------------------------------------------------------------------------------------------------------------
+
+
+def write_file(fname, tile_data, n_tiles, chunk_sizes=(32, 32, 32), compression_method=hdf5plugin.LZ4(nbytes=512*1024*1024)):
+  with h5py.File(fname, 'w') as f:
+    dset = f.create_dataset('data', np.multiply(tile_data.shape, n_tiles), dtype='f', chunks=chunk_sizes, shuffle=True, compression=compression_method)
+    
+    for z in range(n_tiles[0]):
+      for y in range(n_tiles[1]):
+        for x in range(n_tiles[2]):
+          beg = np.multiply([z, y, x], tile_data.shape)
+          end = np.add(beg, tile_data.shape)
+          dset[tuple(slice(beg[i], end[i], None) for i in range(3))] = tile_data
+  
+
+def read_roi(f, roi_origin, roi_dimension):
+  return f['data'][tuple(slice(roi_origin[i], roi_origin[i]+roi_dimension[i], None) for i in range(3))]
+
+# ---------------------------------------------------------------------------------------------------------------------------
+
+
+if __name__ == '__main__':
+  
+  # Where to write a file.
+  fname = os.path.join(tempfile.gettempdir(), "bench.h5")
+  
+  # The data to be written and read from the files. Same input for everything.
+  # Depending on the sparsity, random voxels are set to zero
+  rng             = np.random.default_rng(seed=42)
+  random_data     = rng.uniform(low=-3, high=20, size=(512, 512, 512)).astype('f')
+  sparsified_data = sparsify_data(random_data, sparsity=0.66)
+  
+  if False:
+    read_roi_shape  = (256, 512, 512)
+    for n_tiles in [2]:
+      upper = np.subtract(np.multiply(random_data.shape, n_tiles), read_roi_shape)
+      for cs in [32,64,128,256]:
+        for cn, c in [ ("lz4_1gb",hdf5plugin.LZ4(nbytes=0)), ("blosc2_shuffle",hdf5plugin.Blosc2(cname='lz4', clevel=9, filters=hdf5plugin.Blosc2.SHUFFLE)), ("blosc2_bitshuffle",hdf5plugin.Blosc2(cname='lz4', clevel=9, filters=hdf5plugin.Blosc2.BITSHUFFLE)) ]:
+          
+          t = time_secs(write_file, fname, sparsified_data, [n_tiles]*3, chunk_sizes=(cs, cs, cs), compression_method=c)
+          
+          N  = 256
+          ts = np.zeros(N)
+          z  = rng.integers(low=0, high=upper[0], size=N)
+          y  = rng.integers(low=0, high=upper[1], size=N)
+          x  = rng.integers(low=0, high=upper[2], size=N)
+          with h5py.File(fname, 'r') as f:
+            for roi_ix, roi_origin in enumerate(zip(z, y, x)):
+              ts[roi_ix] = time_secs(read_roi, f, roi_origin, read_roi_shape)
+          
+          s = np.float64(os.path.getsize(fname)) / 2**30
+          print(f"#tiles = {n_tiles} || compr: {cn:18s} + chunk size {cs:3d} | size: {round(s,2):.2f} [GiB] | write time = {round(t,1)} [s]; roi read time = {round(np.mean(ts), 1)} [s]")
+          
+          os.remove(fname)
+    exit(1)
+  
+  
+  chunk_size         = tuple(64 for _ in range(3))
+  compression_method = hdf5plugin.LZ4(nbytes=0)
+  
+  read_roi_shape = (512,512,512)
+  N_rois_to_read = 10
+  
+  benchmark_data = {}
+  T = [1]#[4,3,2,1]
+  for z_tiles in tqdm.tqdm(T):
+    for y_tiles in tqdm.tqdm(T, leave=False):
+      for x_tiles in tqdm.tqdm(T, leave=False):
+        n_tiles  = [z_tiles,y_tiles,x_tiles]
+        vol_size = np.multiply(sparsified_data.shape, n_tiles)
+        upper    = np.subtract(vol_size, read_roi_shape)
+        
+        write_secs = time_secs(write_file, fname, sparsified_data, n_tiles, chunk_size, compression_method=compression_method)
+        
+        read_secs = np.zeros(N, dtype=np.float64)
+        rz = rng.integers(low=0, high=upper[0], size=N_rois_to_read, endpoint=False)
+        ry = rng.integers(low=0, high=upper[1], size=N_rois_to_read, endpoint=False)
+        rx = rng.integers(low=0, high=upper[2], size=N_rois_to_read, endpoint=False)
+        with h5py.File(fname, 'r') as f:
+          for roi_ix, roi_origin in enumerate(zip(rz, ry, rx)):
+            read_secs[roi_ix] = time_secs(read_roi, f, roi_origin, read_roi_shape)
+        
+        compr_file_size = np.float64(os.path.getsize(fname)) / 2**20
+        
+        bd = {}
+        bd['compression'] = compression_factor(compr_file_size, vol_size)
+        bd['write_MiBps'] = throughput(np.prod(vol_size),       write_secs)
+        bd['read__MiBps'] = throughput(np.prod(read_roi_shape), np.mean(read_secs))
+        benchmark_data[(z_tiles,y_tiles,x_tiles)] = bd
+        
+        os.remove(fname)
+  
+
+  if not os.path.exists('results'):
+    os.mkdir('results')
+  
+  with open("results/h5_large_file_benchmark.json", "w") as bench_file:
+    json.dump(benchmark_data, bench_file, indent=2)
