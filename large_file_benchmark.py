@@ -9,6 +9,9 @@ import numpy as np
 import h5py
 import hdf5plugin
 
+# For varying file sizes of similar content, check how the different compressions perform.
+# Expectation for the used ones: Approximately same compressions and access speeds irregardless of size.
+
 # ---------------------------------------------------------------------------------------------------------------------------
 
 def sparsify_data(data, sparsity):
@@ -93,14 +96,18 @@ if __name__ == '__main__':
     exit(1)
   
   
-  chunk_size         = tuple(64 for _ in range(3))
-  compression_method = hdf5plugin.LZ4(nbytes=0)
+  chunk_size = tuple(64 for _ in range(3))
   
-  read_roi_shape = (512,512,512)
-  N_rois_to_read = 25
+  COMPRESSION_METHODS = [
+    ('LZ4_1GiB', hdf5plugin.LZ4(nbytes=0)),
+    ('Blosc2_LZ4HC_L5', hdf5plugin.Blosc2(cname='lz4hc', clevel=5, filters=hdf5plugin.Blosc2.SHUFFLE)),
+  ]
+  
+  read_roi_shape = (256,512,512)
+  N_rois_to_read = 10
   
   benchmark_data = {}
-  T = [4,3,2]
+  T = [3,2]
   for z_tiles in tqdm.tqdm(T):
     for y_tiles in tqdm.tqdm(T, leave=False):
       for x_tiles in tqdm.tqdm(T, leave=False):
@@ -108,25 +115,28 @@ if __name__ == '__main__':
         vol_size = np.multiply(sparsified_data.shape, n_tiles)
         upper    = np.subtract(vol_size, read_roi_shape)
         
-        write_secs = time_secs(write_file, fname, sparsified_data, n_tiles, chunk_size, compression_method=compression_method)
-        
         read_secs = np.zeros(N_rois_to_read, dtype=np.float64)
         rz = rng.integers(low=0, high=upper[0], size=N_rois_to_read, endpoint=False)
         ry = rng.integers(low=0, high=upper[1], size=N_rois_to_read, endpoint=False)
         rx = rng.integers(low=0, high=upper[2], size=N_rois_to_read, endpoint=False)
-        with h5py.File(fname, 'r') as f:
-          for roi_ix, roi_origin in tqdm.tqdm(enumerate(zip(rz, ry, rx)), leave=False):
-            read_secs[roi_ix] = time_secs(read_roi, f, roi_origin, read_roi_shape)
         
-        compr_file_size = np.float64(os.path.getsize(fname)) / 2**20
+        for compr_method_name, compression_method in tqdm.tqdm(COMPRESSION_METHODS, leave=False):
+          write_secs = time_secs(write_file, fname, sparsified_data, n_tiles, chunk_size, compression_method=compression_method)
+          
+          with h5py.File(fname, 'r') as f:
+            for roi_ix, roi_origin in tqdm.tqdm(enumerate(zip(rz, ry, rx)), leave=False):
+              read_secs[roi_ix] = time_secs(read_roi, f, roi_origin, read_roi_shape)
+          
+          compr_file_size = np.float64(os.path.getsize(fname)) / 2**20
+          
+          bd = {}
+          bd['compression_method'] = compr_method_name
+          bd['compression']        = compression_factor(compr_file_size, vol_size)
+          bd['write_MiBps']        = throughput(np.prod(vol_size),       write_secs)
+          bd['read__MiBps']        = throughput(np.prod(read_roi_shape), np.mean(read_secs))
+          benchmark_data[f'{z_tiles}{y_tiles}{x_tiles}'] = bd
         
-        bd = {}
-        bd['compression'] = compression_factor(compr_file_size, vol_size)
-        bd['write_MiBps'] = throughput(np.prod(vol_size),       write_secs)
-        bd['read__MiBps'] = throughput(np.prod(read_roi_shape), np.mean(read_secs))
-        benchmark_data[f'{z_tiles}{y_tiles}{x_tiles}'] = bd
-        
-        os.remove(fname)
+          os.remove(fname)
   
 
   if not os.path.exists('results'):
