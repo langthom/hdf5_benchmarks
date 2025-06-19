@@ -4,6 +4,7 @@ import tqdm
 import time
 import json
 import tempfile
+import itertools
 import numpy as np
 
 import h5py
@@ -42,7 +43,7 @@ def compression_factor(compressed_size_MiB, vol_size):
 # ---------------------------------------------------------------------------------------------------------------------------
 
 
-def write_file(fname, tile_data, n_tiles, chunk_sizes=(32, 32, 32), compression_method=hdf5plugin.LZ4(nbytes=512*1024*1024)):
+def write_file_single(fname, tile_data, n_tiles, chunk_sizes=(32, 32, 32), compression_method=hdf5plugin.LZ4(nbytes=512*1024*1024)):
   with h5py.File(fname, 'w') as f:
     dset = f.create_dataset('data', np.multiply(tile_data.shape, n_tiles), dtype='f', chunks=chunk_sizes, shuffle=True, compression=compression_method)
     
@@ -54,8 +55,57 @@ def write_file(fname, tile_data, n_tiles, chunk_sizes=(32, 32, 32), compression_
           dset[tuple(slice(beg[i], end[i], None) for i in range(3))] = tile_data
   
 
-def read_roi(f, roi_origin, roi_dimension):
+def read_roi_single(f, roi_origin, roi_dimension):
   return f['data'][tuple(slice(roi_origin[i], roi_origin[i]+roi_dimension[i], None) for i in range(3))]
+
+
+# -+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-
+
+def write_file_multi(fname, tile_data, n_tiles, chunk_sizes=(32, 32, 32), compression_method=hdf5plugin.LZ4(nbytes=512*1024*1024)):
+  with h5py.File(fname, 'w') as f:
+    for z in range(n_tiles[0]):
+      for y in range(n_tiles[1]):
+        for x in range(n_tiles[2]):
+          dset = f.create_dataset(f'data{z}{y}{x}', tile_data.shape, dtype='f', chunks=chunk_sizes, shuffle=True, compression=compression_method)
+          dset[:] = tile_data
+
+
+def calculate_slices(roi_origin, roi_dim, tile_sizes):
+  roi_tile_beg = np.floor_divide(roi_origin,                    tile_sizes).astype(int)
+  roi_tile_end = np.floor_divide(np.add(roi_origin, roi_dim)-1, tile_sizes).astype(int)
+  num_tiles    = roi_tile_end - roi_tile_beg + 1
+  
+  sb = np.mod(roi_origin,                                               tile_sizes).astype(int)
+  se = np.mod(np.add(roi_origin, roi_dim) - (num_tiles-1) * tile_sizes, tile_sizes).astype(int) + 1
+  
+  tile_strs = []
+  slices = []
+  
+  for axis in range(len(roi_origin)):
+    slices_per_axis = [slice(sb[axis], se[axis] if num_tiles[axis] == 1 else None, None)]
+    tile_strs_axis  = [roi_tile_beg[axis]]
+    
+    if num_tiles[axis] > 1:
+      for t in range(roi_tile_beg[axis]+1, roi_tile_end[axis]):
+        slices_per_axis.append(slice(None))
+        tile_strs_axis.append(t)
+      slices_per_axis.append(slice(0, se[axis], None))
+      tile_strs_axis.append(roi_tile_end[axis]-1)
+    
+    slices.append(slices_per_axis)
+    tile_strs.append(tile_strs_axis)
+  
+  all_slices = itertools.product(*slices)
+  all_tiles  = itertools.product(*tile_strs)
+  return zip(all_slices, [ f"data{z}{y}{x}" for z,y,x in all_tiles ])
+
+
+def read_roi_multi(f, roi_origin, roi_dimension, tile_sizes):
+  data = []
+  for file_slice, tile_str in calculate_slices(roi_origin, roi_dimension, tile_sizes):
+    data.append(f[tile_str][file_slice])
+  return data
+
 
 # ---------------------------------------------------------------------------------------------------------------------------
 
@@ -99,15 +149,15 @@ if __name__ == '__main__':
   chunk_size = tuple(64 for _ in range(3))
   
   COMPRESSION_METHODS = [
-    ('LZ4_1GiB', hdf5plugin.LZ4(nbytes=0)),
     ('Blosc2_LZ4HC_L5', hdf5plugin.Blosc2(cname='lz4hc', clevel=5, filters=hdf5plugin.Blosc2.SHUFFLE)),
+    ('LZ4_1GiB',        hdf5plugin.LZ4(nbytes=0)),
   ]
   
-  read_roi_shape = (256,512,512)
-  N_rois_to_read = 10
+  read_roi_shape = (512,768,768)
+  N_rois_to_read = 5
   
   benchmark_data = {}
-  T = [3,2]
+  T = [4,3,2]
   for z_tiles in tqdm.tqdm(T):
     for y_tiles in tqdm.tqdm(T, leave=False):
       for x_tiles in tqdm.tqdm(T, leave=False):
@@ -121,22 +171,28 @@ if __name__ == '__main__':
         rx = rng.integers(low=0, high=upper[2], size=N_rois_to_read, endpoint=False)
         
         for compr_method_name, compression_method in tqdm.tqdm(COMPRESSION_METHODS, leave=False):
-          write_secs = time_secs(write_file, fname, sparsified_data, n_tiles, chunk_size, compression_method=compression_method)
           
-          with h5py.File(fname, 'r') as f:
-            for roi_ix, roi_origin in tqdm.tqdm(enumerate(zip(rz, ry, rx)), leave=False):
-              read_secs[roi_ix] = time_secs(read_roi, f, roi_origin, read_roi_shape)
+          for dset_type in tqdm.tqdm(['single','multi'], leave=False):
+            __write_fun = write_file_single if dset_type == 'single' else write_file_multi
+            __read__fun = read_roi_single   if dset_type == 'single' else lambda *args: read_roi_multi(*args, tile_sizes=sparsified_data.shape)
+            
+            write_secs = time_secs(__write_fun, fname, sparsified_data, n_tiles, chunk_size, compression_method=compression_method)
+            
+            with h5py.File(fname, 'r') as f:
+              for roi_ix, roi_origin in tqdm.tqdm(enumerate(zip(rz, ry, rx)), leave=False):
+                read_secs[roi_ix] = time_secs(__read__fun, f, roi_origin, read_roi_shape)
+            
+            compr_file_size = np.float64(os.path.getsize(fname)) / 2**20
+            
+            bd = {}
+            bd['dataset_type']       = dset_type
+            bd['compression_method'] = compr_method_name
+            bd['compression']        = compression_factor(compr_file_size, vol_size)
+            bd['write_MiBps']        = throughput(np.prod(vol_size),       write_secs)
+            bd['read__MiBps']        = throughput(np.prod(read_roi_shape), np.mean(read_secs))
+            benchmark_data[f'{dset_type}_{compr_method_name}_{z_tiles}{y_tiles}{x_tiles}'] = bd
           
-          compr_file_size = np.float64(os.path.getsize(fname)) / 2**20
-          
-          bd = {}
-          bd['compression_method'] = compr_method_name
-          bd['compression']        = compression_factor(compr_file_size, vol_size)
-          bd['write_MiBps']        = throughput(np.prod(vol_size),       write_secs)
-          bd['read__MiBps']        = throughput(np.prod(read_roi_shape), np.mean(read_secs))
-          benchmark_data[f'{z_tiles}{y_tiles}{x_tiles}'] = bd
-        
-          os.remove(fname)
+            os.remove(fname)
   
 
   if not os.path.exists('results'):
@@ -144,3 +200,19 @@ if __name__ == '__main__':
   
   with open("results/h5_large_file_benchmark.json", "w") as bench_file:
     json.dump(benchmark_data, bench_file, indent=2)
+  
+  
+  # Estimate write/read times for some sizes
+  for dset_type in ['single','multi']:
+    for compr_method_name, _ in COMPRESSION_METHODS:
+      avg_write_throughput = np.mean([ benchmark_data[k]['write_MiBps'] for k in benchmark_data if benchmark_data[k]['dataset_type'] == dset_type and benchmark_data[k]['compression_method'] == compr_method_name ])
+      avg_read_throughput  = np.mean([ benchmark_data[k]['read__MiBps'] for k in benchmark_data if benchmark_data[k]['dataset_type'] == dset_type and benchmark_data[k]['compression_method'] == compr_method_name ])
+      reads  = [ size / avg_read_throughput  for size in [1., 1024., 1024.*1024.] ]
+      writes = [ size / avg_write_throughput for size in [1., 1024., 1024.*1024.] ]
+      
+      print(f"Dataset layout '{dset_type:6s}' + compression '{compr_method_name:15s}'")
+      print(f"  1 [MiB]  |  read = {reads[0]:.1E} [s]  vs.  write = {writes[0]:.1E} [s]")
+      print(f"  1 [GiB]  |  read = {reads[1]:.1E} [s]  vs.  write = {writes[1]:.1E} [s]")
+      print(f"  1 [TiB]  |  read = {reads[2]:.1E} [s]  vs.  write = {writes[2]:.1E} [s]")
+      print()
+  

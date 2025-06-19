@@ -1,0 +1,758 @@
+{
+  "single_Blosc2_LZ4HC_L5_444": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 30.5,
+    "read__MiBps": 454.2
+  },
+  "multi_Blosc2_LZ4HC_L5_444": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 31.1,
+    "read__MiBps": 444.6
+  },
+  "single_LZ4_1GiB_444": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 274.1,
+    "read__MiBps": 351.5
+  },
+  "multi_LZ4_1GiB_444": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 301.2,
+    "read__MiBps": 378.1
+  },
+  "single_Blosc2_LZ4HC_L5_443": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 30.3,
+    "read__MiBps": 577.1
+  },
+  "multi_Blosc2_LZ4HC_L5_443": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 26.1,
+    "read__MiBps": 450.3
+  },
+  "single_LZ4_1GiB_443": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 267.0,
+    "read__MiBps": 340.8
+  },
+  "multi_LZ4_1GiB_443": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 253.0,
+    "read__MiBps": 359.0
+  },
+  "single_Blosc2_LZ4HC_L5_442": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.4,
+    "read__MiBps": 437.7
+  },
+  "multi_Blosc2_LZ4HC_L5_442": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.5,
+    "read__MiBps": 427.2
+  },
+  "single_LZ4_1GiB_442": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 251.2,
+    "read__MiBps": 330.0
+  },
+  "multi_LZ4_1GiB_442": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 255.2,
+    "read__MiBps": 324.2
+  },
+  "single_Blosc2_LZ4HC_L5_434": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.5,
+    "read__MiBps": 432.6
+  },
+  "multi_Blosc2_LZ4HC_L5_434": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.9,
+    "read__MiBps": 463.8
+  },
+  "single_LZ4_1GiB_434": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 262.5,
+    "read__MiBps": 345.8
+  },
+  "multi_LZ4_1GiB_434": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 261.9,
+    "read__MiBps": 341.5
+  },
+  "single_Blosc2_LZ4HC_L5_433": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 26.5,
+    "read__MiBps": 517.9
+  },
+  "multi_Blosc2_LZ4HC_L5_433": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 26.2,
+    "read__MiBps": 513.9
+  },
+  "single_LZ4_1GiB_433": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 277.9,
+    "read__MiBps": 376.8
+  },
+  "multi_LZ4_1GiB_433": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 300.5,
+    "read__MiBps": 354.3
+  },
+  "single_Blosc2_LZ4HC_L5_432": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 26.3,
+    "read__MiBps": 461.9
+  },
+  "multi_Blosc2_LZ4HC_L5_432": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 26.0,
+    "read__MiBps": 489.2
+  },
+  "single_LZ4_1GiB_432": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 331.2,
+    "read__MiBps": 386.8
+  },
+  "multi_LZ4_1GiB_432": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 304.3,
+    "read__MiBps": 370.3
+  },
+  "single_Blosc2_LZ4HC_L5_424": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.7,
+    "read__MiBps": 555.0
+  },
+  "multi_Blosc2_LZ4HC_L5_424": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.9,
+    "read__MiBps": 501.7
+  },
+  "single_LZ4_1GiB_424": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 286.0,
+    "read__MiBps": 394.1
+  },
+  "multi_LZ4_1GiB_424": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 295.9,
+    "read__MiBps": 374.7
+  },
+  "single_Blosc2_LZ4HC_L5_423": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 26.1,
+    "read__MiBps": 435.4
+  },
+  "multi_Blosc2_LZ4HC_L5_423": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 26.0,
+    "read__MiBps": 512.2
+  },
+  "single_LZ4_1GiB_423": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 294.7,
+    "read__MiBps": 376.1
+  },
+  "multi_LZ4_1GiB_423": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 305.1,
+    "read__MiBps": 382.6
+  },
+  "single_Blosc2_LZ4HC_L5_422": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 26.1,
+    "read__MiBps": 551.8
+  },
+  "multi_Blosc2_LZ4HC_L5_422": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.6,
+    "read__MiBps": 538.4
+  },
+  "single_LZ4_1GiB_422": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 292.8,
+    "read__MiBps": 372.6
+  },
+  "multi_LZ4_1GiB_422": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 295.7,
+    "read__MiBps": 348.6
+  },
+  "single_Blosc2_LZ4HC_L5_344": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.9,
+    "read__MiBps": 481.5
+  },
+  "multi_Blosc2_LZ4HC_L5_344": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.6,
+    "read__MiBps": 454.3
+  },
+  "single_LZ4_1GiB_344": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 270.8,
+    "read__MiBps": 345.7
+  },
+  "multi_LZ4_1GiB_344": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 260.3,
+    "read__MiBps": 330.4
+  },
+  "single_Blosc2_LZ4HC_L5_343": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.5,
+    "read__MiBps": 459.2
+  },
+  "multi_Blosc2_LZ4HC_L5_343": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.4,
+    "read__MiBps": 434.8
+  },
+  "single_LZ4_1GiB_343": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 253.9,
+    "read__MiBps": 360.2
+  },
+  "multi_LZ4_1GiB_343": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 247.8,
+    "read__MiBps": 347.5
+  },
+  "single_Blosc2_LZ4HC_L5_342": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.5,
+    "read__MiBps": 409.3
+  },
+  "multi_Blosc2_LZ4HC_L5_342": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 27.7,
+    "read__MiBps": 454.5
+  },
+  "single_LZ4_1GiB_342": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 333.6,
+    "read__MiBps": 450.7
+  },
+  "multi_LZ4_1GiB_342": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 342.3,
+    "read__MiBps": 429.9
+  },
+  "single_Blosc2_LZ4HC_L5_334": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 34.7,
+    "read__MiBps": 482.1
+  },
+  "multi_Blosc2_LZ4HC_L5_334": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 26.0,
+    "read__MiBps": 435.6
+  },
+  "single_LZ4_1GiB_334": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 257.9,
+    "read__MiBps": 358.8
+  },
+  "multi_LZ4_1GiB_334": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 256.6,
+    "read__MiBps": 356.1
+  },
+  "single_Blosc2_LZ4HC_L5_333": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.3,
+    "read__MiBps": 444.0
+  },
+  "multi_Blosc2_LZ4HC_L5_333": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.4,
+    "read__MiBps": 510.5
+  },
+  "single_LZ4_1GiB_333": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 267.6,
+    "read__MiBps": 336.2
+  },
+  "multi_LZ4_1GiB_333": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 255.3,
+    "read__MiBps": 335.3
+  },
+  "single_Blosc2_LZ4HC_L5_332": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.4,
+    "read__MiBps": 423.4
+  },
+  "multi_Blosc2_LZ4HC_L5_332": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.3,
+    "read__MiBps": 400.8
+  },
+  "single_LZ4_1GiB_332": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 255.3,
+    "read__MiBps": 326.4
+  },
+  "multi_LZ4_1GiB_332": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 251.0,
+    "read__MiBps": 317.9
+  },
+  "single_Blosc2_LZ4HC_L5_324": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.3,
+    "read__MiBps": 484.4
+  },
+  "multi_Blosc2_LZ4HC_L5_324": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.3,
+    "read__MiBps": 423.9
+  },
+  "single_LZ4_1GiB_324": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 248.6,
+    "read__MiBps": 319.8
+  },
+  "multi_LZ4_1GiB_324": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 256.9,
+    "read__MiBps": 318.7
+  },
+  "single_Blosc2_LZ4HC_L5_323": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.2,
+    "read__MiBps": 483.4
+  },
+  "multi_Blosc2_LZ4HC_L5_323": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.1,
+    "read__MiBps": 492.6
+  },
+  "single_LZ4_1GiB_323": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 256.2,
+    "read__MiBps": 326.7
+  },
+  "multi_LZ4_1GiB_323": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 253.4,
+    "read__MiBps": 325.5
+  },
+  "single_Blosc2_LZ4HC_L5_322": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.4,
+    "read__MiBps": 431.9
+  },
+  "multi_Blosc2_LZ4HC_L5_322": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.4,
+    "read__MiBps": 411.7
+  },
+  "single_LZ4_1GiB_322": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 250.4,
+    "read__MiBps": 325.6
+  },
+  "multi_LZ4_1GiB_322": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 247.8,
+    "read__MiBps": 317.0
+  },
+  "single_Blosc2_LZ4HC_L5_244": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.5,
+    "read__MiBps": 514.1
+  },
+  "multi_Blosc2_LZ4HC_L5_244": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.5,
+    "read__MiBps": 500.8
+  },
+  "single_LZ4_1GiB_244": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 254.5,
+    "read__MiBps": 359.5
+  },
+  "multi_LZ4_1GiB_244": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 254.0,
+    "read__MiBps": 367.9
+  },
+  "single_Blosc2_LZ4HC_L5_243": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.3,
+    "read__MiBps": 444.0
+  },
+  "multi_Blosc2_LZ4HC_L5_243": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.4,
+    "read__MiBps": 483.8
+  },
+  "single_LZ4_1GiB_243": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 259.5,
+    "read__MiBps": 327.0
+  },
+  "multi_LZ4_1GiB_243": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 256.6,
+    "read__MiBps": 306.9
+  },
+  "single_Blosc2_LZ4HC_L5_242": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.5,
+    "read__MiBps": 445.1
+  },
+  "multi_Blosc2_LZ4HC_L5_242": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.2,
+    "read__MiBps": 422.2
+  },
+  "single_LZ4_1GiB_242": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 263.6,
+    "read__MiBps": 327.0
+  },
+  "multi_LZ4_1GiB_242": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 257.6,
+    "read__MiBps": 328.4
+  },
+  "single_Blosc2_LZ4HC_L5_234": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.1,
+    "read__MiBps": 489.5
+  },
+  "multi_Blosc2_LZ4HC_L5_234": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.4,
+    "read__MiBps": 474.1
+  },
+  "single_LZ4_1GiB_234": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 254.2,
+    "read__MiBps": 326.5
+  },
+  "multi_LZ4_1GiB_234": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 253.2,
+    "read__MiBps": 319.3
+  },
+  "single_Blosc2_LZ4HC_L5_233": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.5,
+    "read__MiBps": 437.0
+  },
+  "multi_Blosc2_LZ4HC_L5_233": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.2,
+    "read__MiBps": 434.3
+  },
+  "single_LZ4_1GiB_233": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 250.7,
+    "read__MiBps": 331.3
+  },
+  "multi_LZ4_1GiB_233": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 252.2,
+    "read__MiBps": 337.9
+  },
+  "single_Blosc2_LZ4HC_L5_232": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.1,
+    "read__MiBps": 434.5
+  },
+  "multi_Blosc2_LZ4HC_L5_232": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.0,
+    "read__MiBps": 412.5
+  },
+  "single_LZ4_1GiB_232": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 254.6,
+    "read__MiBps": 330.7
+  },
+  "multi_LZ4_1GiB_232": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 247.2,
+    "read__MiBps": 320.5
+  },
+  "single_Blosc2_LZ4HC_L5_224": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.0,
+    "read__MiBps": 425.2
+  },
+  "multi_Blosc2_LZ4HC_L5_224": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.5,
+    "read__MiBps": 427.1
+  },
+  "single_LZ4_1GiB_224": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 250.1,
+    "read__MiBps": 328.2
+  },
+  "multi_LZ4_1GiB_224": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 253.8,
+    "read__MiBps": 304.3
+  },
+  "single_Blosc2_LZ4HC_L5_223": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.4,
+    "read__MiBps": 432.7
+  },
+  "multi_Blosc2_LZ4HC_L5_223": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.0,
+    "read__MiBps": 424.5
+  },
+  "single_LZ4_1GiB_223": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 251.9,
+    "read__MiBps": 327.7
+  },
+  "multi_LZ4_1GiB_223": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 253.1,
+    "read__MiBps": 328.2
+  },
+  "single_Blosc2_LZ4HC_L5_222": {
+    "dataset_type": "single",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.2,
+    "read__MiBps": 425.1
+  },
+  "multi_Blosc2_LZ4HC_L5_222": {
+    "dataset_type": "multi",
+    "compression_method": "Blosc2_LZ4HC_L5",
+    "compression": 1.4,
+    "write_MiBps": 25.8,
+    "read__MiBps": 409.6
+  },
+  "single_LZ4_1GiB_222": {
+    "dataset_type": "single",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 256.4,
+    "read__MiBps": 341.4
+  },
+  "multi_LZ4_1GiB_222": {
+    "dataset_type": "multi",
+    "compression_method": "LZ4_1GiB",
+    "compression": 1.2,
+    "write_MiBps": 259.1,
+    "read__MiBps": 316.8
+  }
+}
