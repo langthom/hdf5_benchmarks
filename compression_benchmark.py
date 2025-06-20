@@ -9,6 +9,8 @@ import numpy as np
 import h5py
 import hdf5plugin
 
+from common_funcs import *
+
 # Consider a volume of some size
 # Use chunking (to actually get compression)
 # Cache size is large enough for a single chunk
@@ -18,41 +20,13 @@ import hdf5plugin
 #
 # Measure (1) obtained file sizes and (2) throughput depending on the (a) chunk size and (b) the compression method
 
-# ---------------------------------------------------------------------------------------------------------------------------
-
-def sparsify_data(data, sparsity):
-  rng = np.random.default_rng(seed=42)
-  N = int(data.size * sparsity)
-  z = rng.integers(low=0, high=data.shape[0], endpoint=False, size=N)
-  y = rng.integers(low=0, high=data.shape[1], endpoint=False, size=N)
-  x = rng.integers(low=0, high=data.shape[2], endpoint=False, size=N)
-  data[z,y,x] = 0
-  return data
-
-# ---------------------------------------------------------------------------------------------------------------------------
-
-def throughput(size, secs): # float data; [MiB/s]
-  return np.around(size * 4 / 2**20 / secs, decimals=1)
-
-def time_secs(func, *args):
-  begin = time.perf_counter_ns()
-  func(*args)
-  end = time.perf_counter_ns()
-  return np.float64(end - begin) / 1e9
-
-def compression_factor(compressed_size_MiB, vol_size):
-  vol_rek_size = np.prod(vol_size) * 4 + 2048 # float data, in [bytes]
-  vol_rek_size_MiB = np.float64(vol_rek_size) / 2**20
-  return np.around(vol_rek_size_MiB / compressed_size_MiB, decimals=1)
-
-# ---------------------------------------------------------------------------------------------------------------------------
 
 def run(vol_size, chunk_sizes, compression_method, data, sparsity, read_fixed_roi_size=(256,256,256)):
   n_voxels        = vol_size[0] * vol_size[1] * vol_size[2]
   benchmark_data  = {}
   sparsified_data = sparsify_data(data, sparsity)
   
-  fname = os.path.join(tempfile.gettempdir(), "bench.h5")
+  fname = os.path.join(tempfile.gettempdir(), "bench_single.h5")
   
   # Do the experiments
   

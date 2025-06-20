@@ -1,0 +1,52 @@
+{
+  "0.0": {
+    "compression_factor": 1.1,
+    "write_throughput_MiBps": 231.5,
+    "read__throughput_MiBps": 528.0
+  },
+  "0.1111111111111111": {
+    "compression_factor": 1.2,
+    "write_throughput_MiBps": 241.8,
+    "read__throughput_MiBps": 530.6
+  },
+  "0.2222222222222222": {
+    "compression_factor": 1.4,
+    "write_throughput_MiBps": 255.3,
+    "read__throughput_MiBps": 484.6
+  },
+  "0.3333333333333333": {
+    "compression_factor": 1.6,
+    "write_throughput_MiBps": 264.9,
+    "read__throughput_MiBps": 514.6
+  },
+  "0.4444444444444444": {
+    "compression_factor": 1.9,
+    "write_throughput_MiBps": 271.5,
+    "read__throughput_MiBps": 547.1
+  },
+  "0.5555555555555556": {
+    "compression_factor": 2.4,
+    "write_throughput_MiBps": 283.0,
+    "read__throughput_MiBps": 510.7
+  },
+  "0.6666666666666666": {
+    "compression_factor": 3.2,
+    "write_throughput_MiBps": 292.6,
+    "read__throughput_MiBps": 614.5
+  },
+  "0.7777777777777777": {
+    "compression_factor": 4.8,
+    "write_throughput_MiBps": 315.5,
+    "read__throughput_MiBps": 654.0
+  },
+  "0.8888888888888888": {
+    "compression_factor": 9.5,
+    "write_throughput_MiBps": 311.8,
+    "read__throughput_MiBps": 653.6
+  },
+  "1.0": {
+    "compression_factor": 414.7,
+    "write_throughput_MiBps": 351.6,
+    "read__throughput_MiBps": 657.1
+  }
+}

@@ -5,182 +5,182 @@
         "file_size_MiB": 1762.2,
         "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 44.4,
-          "read_roi_contiguous": 560.7,
-          "read_roi_random": 449.2,
-          "read_chunk_contiguous": 185.0,
-          "read_chunk_random": 55.2
+          "write": 56.4,
+          "read_roi_contiguous": 615.8,
+          "read_roi_random": 464.1,
+          "read_chunk_contiguous": 213.9,
+          "read_chunk_random": 62.4
         }
       },
       "32": {
         "file_size_MiB": 1760.0,
         "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 77.3,
-          "read_roi_contiguous": 730.0,
-          "read_roi_random": 535.6,
-          "read_chunk_contiguous": 643.8,
-          "read_chunk_random": 118.9
+          "write": 89.8,
+          "read_roi_contiguous": 922.9,
+          "read_roi_random": 710.4,
+          "read_chunk_contiguous": 792.5,
+          "read_chunk_random": 152.2
         }
       },
       "64": {
         "file_size_MiB": 1697.8,
         "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 79.3,
-          "read_roi_contiguous": 625.0,
-          "read_roi_random": 332.7,
-          "read_chunk_contiguous": 684.4,
-          "read_chunk_random": 99.5
+          "write": 103.3,
+          "read_roi_contiguous": 674.3,
+          "read_roi_random": 383.0,
+          "read_chunk_contiguous": 547.6,
+          "read_chunk_random": 78.0
         }
       },
       "128": {
         "file_size_MiB": 1698.6,
         "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 89.5,
-          "read_roi_contiguous": 590.6,
-          "read_roi_random": 200.3,
-          "read_chunk_contiguous": 649.6,
-          "read_chunk_random": 85.6
+          "write": 97.7,
+          "read_roi_contiguous": 547.5,
+          "read_roi_random": 225.4,
+          "read_chunk_contiguous": 763.5,
+          "read_chunk_random": 107.1
         }
       }
     },
     "0.33": {
       "16": {
-        "file_size_MiB": 1540.1,
-        "compression": 1.3,
+        "file_size_MiB": 1184.0,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 29.0,
-          "read_roi_contiguous": 396.5,
-          "read_roi_random": 334.0,
-          "read_chunk_contiguous": 190.3,
-          "read_chunk_random": 43.3
+          "write": 82.7,
+          "read_roi_contiguous": 764.8,
+          "read_roi_random": 637.8,
+          "read_chunk_contiguous": 270.5,
+          "read_chunk_random": 67.8
         }
       },
       "32": {
-        "file_size_MiB": 1538.9,
-        "compression": 1.3,
+        "file_size_MiB": 1178.4,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 34.0,
-          "read_roi_contiguous": 421.3,
-          "read_roi_random": 297.7,
-          "read_chunk_contiguous": 390.4,
-          "read_chunk_random": 64.1
+          "write": 125.7,
+          "read_roi_contiguous": 1029.8,
+          "read_roi_random": 786.3,
+          "read_chunk_contiguous": 891.7,
+          "read_chunk_random": 166.4
         }
       },
       "64": {
-        "file_size_MiB": 1469.8,
-        "compression": 1.4,
+        "file_size_MiB": 1137.7,
+        "compression": 1.8,
         "throughputs_MiBps": {
-          "write": 31.1,
-          "read_roi_contiguous": 425.1,
-          "read_roi_random": 235.9,
-          "read_chunk_contiguous": 424.2,
-          "read_chunk_random": 55.5
+          "write": 134.4,
+          "read_roi_contiguous": 788.0,
+          "read_roi_random": 451.7,
+          "read_chunk_contiguous": 783.0,
+          "read_chunk_random": 126.0
         }
       },
       "128": {
-        "file_size_MiB": 1482.2,
-        "compression": 1.4,
+        "file_size_MiB": 1138.1,
+        "compression": 1.8,
         "throughputs_MiBps": {
-          "write": 32.5,
-          "read_roi_contiguous": 352.9,
-          "read_roi_random": 106.5,
-          "read_chunk_contiguous": 367.4,
-          "read_chunk_random": 46.5
+          "write": 180.8,
+          "read_roi_contiguous": 762.4,
+          "read_roi_random": 275.8,
+          "read_chunk_contiguous": 871.8,
+          "read_chunk_random": 93.0
         }
       }
     },
     "0.66": {
       "16": {
-        "file_size_MiB": 1064.9,
-        "compression": 1.9,
+        "file_size_MiB": 605.4,
+        "compression": 3.4,
         "throughputs_MiBps": {
-          "write": 16.5,
-          "read_roi_contiguous": 306.7,
-          "read_roi_random": 263.9,
-          "read_chunk_contiguous": 169.8,
-          "read_chunk_random": 38.9
+          "write": 117.2,
+          "read_roi_contiguous": 704.1,
+          "read_roi_random": 630.6,
+          "read_chunk_contiguous": 206.5,
+          "read_chunk_random": 39.9
         }
       },
       "32": {
-        "file_size_MiB": 1049.2,
-        "compression": 2.0,
+        "file_size_MiB": 598.6,
+        "compression": 3.4,
         "throughputs_MiBps": {
-          "write": 22.2,
-          "read_roi_contiguous": 394.4,
-          "read_roi_random": 286.9,
-          "read_chunk_contiguous": 401.4,
-          "read_chunk_random": 76.8
+          "write": 174.0,
+          "read_roi_contiguous": 1116.4,
+          "read_roi_random": 922.7,
+          "read_chunk_contiguous": 897.1,
+          "read_chunk_random": 201.7
         }
       },
       "64": {
-        "file_size_MiB": 1005.8,
-        "compression": 2.0,
+        "file_size_MiB": 577.4,
+        "compression": 3.5,
         "throughputs_MiBps": {
-          "write": 27.4,
-          "read_roi_contiguous": 340.2,
-          "read_roi_random": 184.4,
-          "read_chunk_contiguous": 364.1,
-          "read_chunk_random": 52.9
+          "write": 170.4,
+          "read_roi_contiguous": 823.0,
+          "read_roi_random": 532.5,
+          "read_chunk_contiguous": 883.4,
+          "read_chunk_random": 146.0
         }
       },
       "128": {
-        "file_size_MiB": 1014.1,
-        "compression": 2.0,
+        "file_size_MiB": 577.5,
+        "compression": 3.5,
         "throughputs_MiBps": {
-          "write": 27.8,
-          "read_roi_contiguous": 322.6,
-          "read_roi_random": 110.2,
-          "read_chunk_contiguous": 385.6,
-          "read_chunk_random": 47.7
+          "write": 260.8,
+          "read_roi_contiguous": 837.4,
+          "read_roi_random": 327.3,
+          "read_chunk_contiguous": 1023.4,
+          "read_chunk_random": 148.8
         }
       }
     },
     "0.99": {
       "16": {
-        "file_size_MiB": 534.7,
-        "compression": 3.8,
+        "file_size_MiB": 27.3,
+        "compression": 75.0,
         "throughputs_MiBps": {
-          "write": 13.3,
-          "read_roi_contiguous": 336.9,
-          "read_roi_random": 272.8,
-          "read_chunk_contiguous": 172.9,
-          "read_chunk_random": 33.4
+          "write": 638.4,
+          "read_roi_contiguous": 988.5,
+          "read_roi_random": 840.3,
+          "read_chunk_contiguous": 291.4,
+          "read_chunk_random": 73.9
         }
       },
       "32": {
-        "file_size_MiB": 515.6,
-        "compression": 4.0,
+        "file_size_MiB": 18.7,
+        "compression": 109.5,
         "throughputs_MiBps": {
-          "write": 23.8,
-          "read_roi_contiguous": 385.4,
-          "read_roi_random": 311.9,
-          "read_chunk_contiguous": 422.3,
-          "read_chunk_random": 54.8
+          "write": 419.0,
+          "read_roi_contiguous": 1218.6,
+          "read_roi_random": 996.1,
+          "read_chunk_contiguous": 1004.5,
+          "read_chunk_random": 190.3
         }
       },
       "64": {
-        "file_size_MiB": 496.6,
-        "compression": 4.1,
+        "file_size_MiB": 17.2,
+        "compression": 119.1,
         "throughputs_MiBps": {
-          "write": 31.0,
-          "read_roi_contiguous": 396.9,
-          "read_roi_random": 210.5,
-          "read_chunk_contiguous": 380.2,
-          "read_chunk_random": 57.0
+          "write": 276.7,
+          "read_roi_contiguous": 1004.2,
+          "read_roi_random": 615.8,
+          "read_chunk_contiguous": 999.3,
+          "read_chunk_random": 186.6
         }
       },
       "128": {
-        "file_size_MiB": 498.0,
-        "compression": 4.1,
+        "file_size_MiB": 17.1,
+        "compression": 119.8,
         "throughputs_MiBps": {
-          "write": 34.2,
-          "read_roi_contiguous": 373.9,
-          "read_roi_random": 121.5,
-          "read_chunk_contiguous": 426.7,
-          "read_chunk_random": 55.2
+          "write": 598.1,
+          "read_roi_contiguous": 1037.8,
+          "read_roi_random": 416.7,
+          "read_chunk_contiguous": 1278.9,
+          "read_chunk_random": 190.8
         }
       }
     }
@@ -188,185 +188,185 @@
   "zstd_l22": {
     "0.0": {
       "16": {
-        "file_size_MiB": 488.1,
-        "compression": 4.2,
+        "file_size_MiB": 1720.1,
+        "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 2.3,
-          "read_roi_contiguous": 351.5,
-          "read_roi_random": 293.3,
-          "read_chunk_contiguous": 173.1,
-          "read_chunk_random": 15.9
+          "write": 11.9,
+          "read_roi_contiguous": 647.5,
+          "read_roi_random": 549.8,
+          "read_chunk_contiguous": 247.7,
+          "read_chunk_random": 55.5
         }
       },
       "32": {
-        "file_size_MiB": 462.1,
-        "compression": 4.4,
+        "file_size_MiB": 1698.7,
+        "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 1.9,
-          "read_roi_contiguous": 459.1,
-          "read_roi_random": 367.6,
-          "read_chunk_contiguous": 467.7,
-          "read_chunk_random": 77.6
+          "write": 8.3,
+          "read_roi_contiguous": 769.3,
+          "read_roi_random": 605.9,
+          "read_chunk_contiguous": 680.9,
+          "read_chunk_random": 117.3
         }
       },
       "64": {
-        "file_size_MiB": 452.5,
-        "compression": 4.5,
+        "file_size_MiB": 1681.3,
+        "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 2.8,
-          "read_roi_contiguous": 426.8,
-          "read_roi_random": 241.1,
-          "read_chunk_contiguous": 436.7,
-          "read_chunk_random": 59.2
+          "write": 11.4,
+          "read_roi_contiguous": 601.9,
+          "read_roi_random": 343.5,
+          "read_chunk_contiguous": 597.5,
+          "read_chunk_random": 92.0
         }
       },
       "128": {
-        "file_size_MiB": 443.6,
-        "compression": 4.6,
+        "file_size_MiB": 1671.2,
+        "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 2.2,
-          "read_roi_contiguous": 422.4,
-          "read_roi_random": 140.9,
-          "read_chunk_contiguous": 481.0,
-          "read_chunk_random": 69.3
+          "write": 7.3,
+          "read_roi_contiguous": 614.9,
+          "read_roi_random": 212.0,
+          "read_chunk_contiguous": 672.3,
+          "read_chunk_random": 91.3
         }
       }
     },
     "0.33": {
       "16": {
-        "file_size_MiB": 488.1,
-        "compression": 4.2,
+        "file_size_MiB": 1155.8,
+        "compression": 1.8,
         "throughputs_MiBps": {
-          "write": 2.3,
-          "read_roi_contiguous": 363.3,
-          "read_roi_random": 298.6,
-          "read_chunk_contiguous": 170.4,
-          "read_chunk_random": 35.2
+          "write": 17.4,
+          "read_roi_contiguous": 734.6,
+          "read_roi_random": 574.8,
+          "read_chunk_contiguous": 261.1,
+          "read_chunk_random": 59.6
         }
       },
       "32": {
-        "file_size_MiB": 462.1,
-        "compression": 4.4,
+        "file_size_MiB": 1138.7,
+        "compression": 1.8,
         "throughputs_MiBps": {
-          "write": 1.9,
-          "read_roi_contiguous": 466.1,
-          "read_roi_random": 323.7,
-          "read_chunk_contiguous": 400.2,
-          "read_chunk_random": 56.2
+          "write": 12.1,
+          "read_roi_contiguous": 852.6,
+          "read_roi_random": 641.8,
+          "read_chunk_contiguous": 727.5,
+          "read_chunk_random": 119.7
         }
       },
       "64": {
-        "file_size_MiB": 452.5,
-        "compression": 4.5,
+        "file_size_MiB": 1126.8,
+        "compression": 1.8,
         "throughputs_MiBps": {
-          "write": 2.8,
-          "read_roi_contiguous": 400.6,
-          "read_roi_random": 232.3,
-          "read_chunk_contiguous": 429.3,
-          "read_chunk_random": 64.2
+          "write": 16.5,
+          "read_roi_contiguous": 699.2,
+          "read_roi_random": 386.7,
+          "read_chunk_contiguous": 700.8,
+          "read_chunk_random": 95.5
         }
       },
       "128": {
-        "file_size_MiB": 443.6,
-        "compression": 4.6,
+        "file_size_MiB": 1120.4,
+        "compression": 1.8,
         "throughputs_MiBps": {
-          "write": 2.2,
-          "read_roi_contiguous": 423.6,
-          "read_roi_random": 146.7,
-          "read_chunk_contiguous": 494.8,
-          "read_chunk_random": 68.6
+          "write": 10.9,
+          "read_roi_contiguous": 718.2,
+          "read_roi_random": 252.6,
+          "read_chunk_contiguous": 802.5,
+          "read_chunk_random": 111.4
         }
       }
     },
     "0.66": {
       "16": {
-        "file_size_MiB": 488.1,
-        "compression": 4.2,
+        "file_size_MiB": 591.1,
+        "compression": 3.5,
         "throughputs_MiBps": {
-          "write": 2.3,
-          "read_roi_contiguous": 355.7,
-          "read_roi_random": 297.6,
-          "read_chunk_contiguous": 177.2,
-          "read_chunk_random": 42.4
+          "write": 23.0,
+          "read_roi_contiguous": 832.5,
+          "read_roi_random": 706.2,
+          "read_chunk_contiguous": 276.1,
+          "read_chunk_random": 57.2
         }
       },
       "32": {
-        "file_size_MiB": 462.1,
-        "compression": 4.4,
+        "file_size_MiB": 578.5,
+        "compression": 3.5,
         "throughputs_MiBps": {
-          "write": 1.9,
-          "read_roi_contiguous": 468.4,
-          "read_roi_random": 345.1,
-          "read_chunk_contiguous": 444.8,
-          "read_chunk_random": 53.1
+          "write": 22.4,
+          "read_roi_contiguous": 954.7,
+          "read_roi_random": 800.9,
+          "read_chunk_contiguous": 816.6,
+          "read_chunk_random": 143.3
         }
       },
       "64": {
-        "file_size_MiB": 452.5,
-        "compression": 4.5,
+        "file_size_MiB": 572.0,
+        "compression": 3.6,
         "throughputs_MiBps": {
-          "write": 2.8,
-          "read_roi_contiguous": 399.3,
-          "read_roi_random": 221.8,
-          "read_chunk_contiguous": 428.8,
-          "read_chunk_random": 63.6
+          "write": 29.6,
+          "read_roi_contiguous": 845.6,
+          "read_roi_random": 499.2,
+          "read_chunk_contiguous": 824.9,
+          "read_chunk_random": 143.0
         }
       },
       "128": {
-        "file_size_MiB": 443.6,
-        "compression": 4.6,
+        "file_size_MiB": 568.8,
+        "compression": 3.6,
         "throughputs_MiBps": {
-          "write": 2.2,
-          "read_roi_contiguous": 446.6,
-          "read_roi_random": 152.2,
-          "read_chunk_contiguous": 475.5,
-          "read_chunk_random": 61.9
+          "write": 20.5,
+          "read_roi_contiguous": 842.6,
+          "read_roi_random": 323.1,
+          "read_chunk_contiguous": 987.4,
+          "read_chunk_random": 151.7
         }
       }
     },
     "0.99": {
       "16": {
-        "file_size_MiB": 488.1,
-        "compression": 4.2,
+        "file_size_MiB": 26.7,
+        "compression": 76.7,
         "throughputs_MiBps": {
-          "write": 2.3,
-          "read_roi_contiguous": 338.4,
-          "read_roi_random": 283.9,
-          "read_chunk_contiguous": 160.2,
-          "read_chunk_random": 40.1
+          "write": 224.2,
+          "read_roi_contiguous": 944.1,
+          "read_roi_random": 786.6,
+          "read_chunk_contiguous": 289.3,
+          "read_chunk_random": 65.3
         }
       },
       "32": {
-        "file_size_MiB": 462.1,
-        "compression": 4.4,
+        "file_size_MiB": 18.3,
+        "compression": 111.9,
         "throughputs_MiBps": {
-          "write": 1.9,
-          "read_roi_contiguous": 451.8,
-          "read_roi_random": 327.0,
-          "read_chunk_contiguous": 437.4,
-          "read_chunk_random": 81.0
+          "write": 142.6,
+          "read_roi_contiguous": 1077.3,
+          "read_roi_random": 883.1,
+          "read_chunk_contiguous": 900.6,
+          "read_chunk_random": 149.9
         }
       },
       "64": {
-        "file_size_MiB": 452.5,
-        "compression": 4.5,
+        "file_size_MiB": 17.1,
+        "compression": 119.8,
         "throughputs_MiBps": {
-          "write": 2.7,
-          "read_roi_contiguous": 405.6,
-          "read_roi_random": 247.4,
-          "read_chunk_contiguous": 464.3,
-          "read_chunk_random": 72.3
+          "write": 149.9,
+          "read_roi_contiguous": 1023.5,
+          "read_roi_random": 625.3,
+          "read_chunk_contiguous": 1041.6,
+          "read_chunk_random": 173.0
         }
       },
       "128": {
-        "file_size_MiB": 443.6,
-        "compression": 4.6,
+        "file_size_MiB": 16.9,
+        "compression": 121.2,
         "throughputs_MiBps": {
-          "write": 2.2,
-          "read_roi_contiguous": 439.2,
-          "read_roi_random": 142.9,
-          "read_chunk_contiguous": 481.7,
-          "read_chunk_random": 64.9
+          "write": 143.7,
+          "read_roi_contiguous": 1037.1,
+          "read_roi_random": 417.2,
+          "read_chunk_contiguous": 1297.9,
+          "read_chunk_random": 187.7
         }
       }
     }
@@ -374,185 +374,185 @@
   "lz4_512MiB": {
     "0.0": {
       "16": {
-        "file_size_MiB": 921.6,
-        "compression": 2.2,
+        "file_size_MiB": 1916.1,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 245.5,
-          "read_roi_contiguous": 278.2,
-          "read_roi_random": 228.2,
-          "read_chunk_contiguous": 160.5,
-          "read_chunk_random": 44.9
+          "write": 536.0,
+          "read_roi_contiguous": 728.1,
+          "read_roi_random": 624.0,
+          "read_chunk_contiguous": 260.9,
+          "read_chunk_random": 68.5
         }
       },
       "32": {
-        "file_size_MiB": 825.7,
-        "compression": 2.5,
+        "file_size_MiB": 1850.4,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 275.5,
-          "read_roi_contiguous": 306.1,
-          "read_roi_random": 233.8,
-          "read_chunk_contiguous": 300.5,
-          "read_chunk_random": 54.6
+          "write": 615.5,
+          "read_roi_contiguous": 736.4,
+          "read_roi_random": 581.2,
+          "read_chunk_contiguous": 628.0,
+          "read_chunk_random": 111.3
         }
       },
       "64": {
-        "file_size_MiB": 816.1,
-        "compression": 2.5,
+        "file_size_MiB": 1836.5,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 272.4,
-          "read_roi_contiguous": 296.5,
-          "read_roi_random": 160.3,
-          "read_chunk_contiguous": 318.1,
-          "read_chunk_random": 44.7
+          "write": 612.5,
+          "read_roi_contiguous": 685.1,
+          "read_roi_random": 388.5,
+          "read_chunk_contiguous": 670.3,
+          "read_chunk_random": 102.5
         }
       },
       "128": {
-        "file_size_MiB": 814.9,
-        "compression": 2.5,
+        "file_size_MiB": 1833.5,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 296.9,
-          "read_roi_contiguous": 300.7,
-          "read_roi_random": 98.7,
-          "read_chunk_contiguous": 332.9,
-          "read_chunk_random": 44.0
+          "write": 642.6,
+          "read_roi_contiguous": 659.5,
+          "read_roi_random": 230.5,
+          "read_chunk_contiguous": 725.7,
+          "read_chunk_random": 103.1
         }
       }
     },
     "0.33": {
       "16": {
-        "file_size_MiB": 921.6,
-        "compression": 2.2,
+        "file_size_MiB": 1289.9,
+        "compression": 1.6,
         "throughputs_MiBps": {
-          "write": 244.2,
-          "read_roi_contiguous": 292.8,
-          "read_roi_random": 255.1,
-          "read_chunk_contiguous": 147.8,
-          "read_chunk_random": 47.7
+          "write": 621.7,
+          "read_roi_contiguous": 636.9,
+          "read_roi_random": 558.8,
+          "read_chunk_contiguous": 250.4,
+          "read_chunk_random": 70.6
         }
       },
       "32": {
-        "file_size_MiB": 825.7,
-        "compression": 2.5,
+        "file_size_MiB": 1242.7,
+        "compression": 1.6,
         "throughputs_MiBps": {
-          "write": 317.8,
-          "read_roi_contiguous": 309.7,
-          "read_roi_random": 241.4,
-          "read_chunk_contiguous": 303.5,
-          "read_chunk_random": 35.9
+          "write": 729.8,
+          "read_roi_contiguous": 657.5,
+          "read_roi_random": 518.5,
+          "read_chunk_contiguous": 560.7,
+          "read_chunk_random": 100.9
         }
       },
       "64": {
-        "file_size_MiB": 816.1,
-        "compression": 2.5,
+        "file_size_MiB": 1233.2,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 272.0,
-          "read_roi_contiguous": 301.5,
-          "read_roi_random": 149.3,
-          "read_chunk_contiguous": 301.3,
-          "read_chunk_random": 46.4
+          "write": 727.7,
+          "read_roi_contiguous": 628.8,
+          "read_roi_random": 371.5,
+          "read_chunk_contiguous": 619.3,
+          "read_chunk_random": 89.5
         }
       },
       "128": {
-        "file_size_MiB": 814.9,
-        "compression": 2.5,
+        "file_size_MiB": 1231.0,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 302.8,
-          "read_roi_contiguous": 299.8,
-          "read_roi_random": 96.0,
-          "read_chunk_contiguous": 337.7,
-          "read_chunk_random": 42.6
+          "write": 768.4,
+          "read_roi_contiguous": 609.9,
+          "read_roi_random": 218.5,
+          "read_chunk_contiguous": 685.8,
+          "read_chunk_random": 97.8
         }
       }
     },
     "0.66": {
       "16": {
-        "file_size_MiB": 921.6,
-        "compression": 2.2,
+        "file_size_MiB": 663.5,
+        "compression": 3.1,
         "throughputs_MiBps": {
-          "write": 254.0,
-          "read_roi_contiguous": 278.0,
-          "read_roi_random": 233.3,
-          "read_chunk_contiguous": 160.8,
-          "read_chunk_random": 40.4
+          "write": 752.2,
+          "read_roi_contiguous": 566.1,
+          "read_roi_random": 483.1,
+          "read_chunk_contiguous": 237.4,
+          "read_chunk_random": 62.9
         }
       },
       "32": {
-        "file_size_MiB": 825.7,
-        "compression": 2.5,
+        "file_size_MiB": 635.4,
+        "compression": 3.2,
         "throughputs_MiBps": {
-          "write": 271.7,
-          "read_roi_contiguous": 300.8,
-          "read_roi_random": 239.3,
-          "read_chunk_contiguous": 304.7,
-          "read_chunk_random": 48.1
+          "write": 872.8,
+          "read_roi_contiguous": 597.2,
+          "read_roi_random": 447.3,
+          "read_chunk_contiguous": 519.2,
+          "read_chunk_random": 81.8
         }
       },
       "64": {
-        "file_size_MiB": 816.1,
-        "compression": 2.5,
+        "file_size_MiB": 629.7,
+        "compression": 3.3,
         "throughputs_MiBps": {
-          "write": 275.8,
-          "read_roi_contiguous": 299.3,
-          "read_roi_random": 153.7,
-          "read_chunk_contiguous": 307.5,
-          "read_chunk_random": 40.6
+          "write": 894.8,
+          "read_roi_contiguous": 560.1,
+          "read_roi_random": 319.7,
+          "read_chunk_contiguous": 548.0,
+          "read_chunk_random": 84.3
         }
       },
       "128": {
-        "file_size_MiB": 814.9,
-        "compression": 2.5,
+        "file_size_MiB": 628.7,
+        "compression": 3.3,
         "throughputs_MiBps": {
-          "write": 292.1,
-          "read_roi_contiguous": 306.3,
-          "read_roi_random": 103.0,
-          "read_chunk_contiguous": 349.3,
-          "read_chunk_random": 44.9
+          "write": 965.5,
+          "read_roi_contiguous": 589.8,
+          "read_roi_random": 207.8,
+          "read_chunk_contiguous": 649.1,
+          "read_chunk_random": 91.7
         }
       }
     },
     "0.99": {
       "16": {
-        "file_size_MiB": 921.6,
-        "compression": 2.2,
+        "file_size_MiB": 37.5,
+        "compression": 54.6,
         "throughputs_MiBps": {
-          "write": 245.3,
-          "read_roi_contiguous": 269.9,
-          "read_roi_random": 232.7,
-          "read_chunk_contiguous": 155.4,
-          "read_chunk_random": 45.2
+          "write": 1062.8,
+          "read_roi_contiguous": 522.8,
+          "read_roi_random": 441.3,
+          "read_chunk_contiguous": 237.9,
+          "read_chunk_random": 58.9
         }
       },
       "32": {
-        "file_size_MiB": 825.7,
-        "compression": 2.5,
+        "file_size_MiB": 27.9,
+        "compression": 73.4,
         "throughputs_MiBps": {
-          "write": 256.6,
-          "read_roi_contiguous": 314.1,
-          "read_roi_random": 220.6,
-          "read_chunk_contiguous": 286.0,
-          "read_chunk_random": 39.3
+          "write": 1134.6,
+          "read_roi_contiguous": 550.0,
+          "read_roi_random": 414.0,
+          "read_chunk_contiguous": 483.5,
+          "read_chunk_random": 79.5
         }
       },
       "64": {
-        "file_size_MiB": 816.1,
-        "compression": 2.5,
+        "file_size_MiB": 26.6,
+        "compression": 77.0,
         "throughputs_MiBps": {
-          "write": 289.6,
-          "read_roi_contiguous": 307.2,
-          "read_roi_random": 161.6,
-          "read_chunk_contiguous": 303.0,
-          "read_chunk_random": 44.6
+          "write": 1185.9,
+          "read_roi_contiguous": 532.9,
+          "read_roi_random": 292.2,
+          "read_chunk_contiguous": 531.9,
+          "read_chunk_random": 76.6
         }
       },
       "128": {
-        "file_size_MiB": 814.9,
-        "compression": 2.5,
+        "file_size_MiB": 26.4,
+        "compression": 77.6,
         "throughputs_MiBps": {
-          "write": 292.1,
-          "read_roi_contiguous": 307.5,
-          "read_roi_random": 100.2,
-          "read_chunk_contiguous": 329.8,
-          "read_chunk_random": 44.6
+          "write": 1293.8,
+          "read_roi_contiguous": 560.3,
+          "read_roi_random": 188.5,
+          "read_chunk_contiguous": 619.6,
+          "read_chunk_random": 80.5
         }
       }
     }
@@ -560,185 +560,185 @@
   "lz4_1GiB": {
     "0.0": {
       "16": {
-        "file_size_MiB": 921.6,
-        "compression": 2.2,
+        "file_size_MiB": 1916.1,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 242.8,
-          "read_roi_contiguous": 295.5,
-          "read_roi_random": 241.3,
-          "read_chunk_contiguous": 154.5,
-          "read_chunk_random": 45.1
+          "write": 526.1,
+          "read_roi_contiguous": 734.9,
+          "read_roi_random": 611.7,
+          "read_chunk_contiguous": 261.5,
+          "read_chunk_random": 81.2
         }
       },
       "32": {
-        "file_size_MiB": 825.7,
-        "compression": 2.5,
+        "file_size_MiB": 1850.4,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 267.4,
-          "read_roi_contiguous": 303.9,
-          "read_roi_random": 223.5,
-          "read_chunk_contiguous": 282.0,
-          "read_chunk_random": 33.9
+          "write": 589.6,
+          "read_roi_contiguous": 723.8,
+          "read_roi_random": 568.3,
+          "read_chunk_contiguous": 593.7,
+          "read_chunk_random": 105.8
         }
       },
       "64": {
-        "file_size_MiB": 816.1,
-        "compression": 2.5,
+        "file_size_MiB": 1836.5,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 295.4,
-          "read_roi_contiguous": 291.7,
-          "read_roi_random": 160.6,
-          "read_chunk_contiguous": 287.8,
-          "read_chunk_random": 45.9
+          "write": 602.1,
+          "read_roi_contiguous": 672.1,
+          "read_roi_random": 384.9,
+          "read_chunk_contiguous": 663.0,
+          "read_chunk_random": 102.8
         }
       },
       "128": {
-        "file_size_MiB": 814.9,
-        "compression": 2.5,
+        "file_size_MiB": 1833.5,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 285.0,
-          "read_roi_contiguous": 309.2,
-          "read_roi_random": 102.8,
-          "read_chunk_contiguous": 337.7,
-          "read_chunk_random": 45.5
+          "write": 642.6,
+          "read_roi_contiguous": 660.3,
+          "read_roi_random": 228.9,
+          "read_chunk_contiguous": 733.0,
+          "read_chunk_random": 100.1
         }
       }
     },
     "0.33": {
       "16": {
-        "file_size_MiB": 921.6,
-        "compression": 2.2,
+        "file_size_MiB": 1289.9,
+        "compression": 1.6,
         "throughputs_MiBps": {
-          "write": 244.9,
-          "read_roi_contiguous": 288.0,
-          "read_roi_random": 238.5,
-          "read_chunk_contiguous": 160.6,
-          "read_chunk_random": 21.8
+          "write": 617.1,
+          "read_roi_contiguous": 641.1,
+          "read_roi_random": 561.9,
+          "read_chunk_contiguous": 253.0,
+          "read_chunk_random": 71.6
         }
       },
       "32": {
-        "file_size_MiB": 825.7,
-        "compression": 2.5,
+        "file_size_MiB": 1242.7,
+        "compression": 1.6,
         "throughputs_MiBps": {
-          "write": 255.0,
-          "read_roi_contiguous": 297.4,
-          "read_roi_random": 227.3,
-          "read_chunk_contiguous": 290.4,
-          "read_chunk_random": 48.4
+          "write": 666.9,
+          "read_roi_contiguous": 636.8,
+          "read_roi_random": 496.6,
+          "read_chunk_contiguous": 539.5,
+          "read_chunk_random": 90.9
         }
       },
       "64": {
-        "file_size_MiB": 816.1,
-        "compression": 2.5,
+        "file_size_MiB": 1233.2,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 285.1,
-          "read_roi_contiguous": 301.7,
-          "read_roi_random": 164.8,
-          "read_chunk_contiguous": 294.9,
-          "read_chunk_random": 48.0
+          "write": 715.5,
+          "read_roi_contiguous": 620.1,
+          "read_roi_random": 362.1,
+          "read_chunk_contiguous": 617.2,
+          "read_chunk_random": 96.8
         }
       },
       "128": {
-        "file_size_MiB": 814.9,
-        "compression": 2.5,
+        "file_size_MiB": 1231.0,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 293.6,
-          "read_roi_contiguous": 310.6,
-          "read_roi_random": 97.7,
-          "read_chunk_contiguous": 337.2,
-          "read_chunk_random": 44.9
+          "write": 759.1,
+          "read_roi_contiguous": 616.1,
+          "read_roi_random": 216.1,
+          "read_chunk_contiguous": 684.6,
+          "read_chunk_random": 92.7
         }
       }
     },
     "0.66": {
       "16": {
-        "file_size_MiB": 921.6,
-        "compression": 2.2,
+        "file_size_MiB": 663.5,
+        "compression": 3.1,
         "throughputs_MiBps": {
-          "write": 244.4,
-          "read_roi_contiguous": 304.5,
-          "read_roi_random": 251.7,
-          "read_chunk_contiguous": 160.2,
-          "read_chunk_random": 46.8
+          "write": 722.5,
+          "read_roi_contiguous": 572.9,
+          "read_roi_random": 459.8,
+          "read_chunk_contiguous": 227.8,
+          "read_chunk_random": 61.4
         }
       },
       "32": {
-        "file_size_MiB": 825.7,
-        "compression": 2.5,
+        "file_size_MiB": 635.4,
+        "compression": 3.2,
         "throughputs_MiBps": {
-          "write": 268.4,
-          "read_roi_contiguous": 296.3,
-          "read_roi_random": 223.9,
-          "read_chunk_contiguous": 279.1,
-          "read_chunk_random": 56.7
+          "write": 757.2,
+          "read_roi_contiguous": 575.4,
+          "read_roi_random": 416.0,
+          "read_chunk_contiguous": 488.4,
+          "read_chunk_random": 74.8
         }
       },
       "64": {
-        "file_size_MiB": 816.1,
-        "compression": 2.5,
+        "file_size_MiB": 629.7,
+        "compression": 3.3,
         "throughputs_MiBps": {
-          "write": 291.6,
-          "read_roi_contiguous": 317.7,
-          "read_roi_random": 151.7,
-          "read_chunk_contiguous": 283.4,
-          "read_chunk_random": 40.7
+          "write": 886.5,
+          "read_roi_contiguous": 555.8,
+          "read_roi_random": 310.6,
+          "read_chunk_contiguous": 552.6,
+          "read_chunk_random": 81.8
         }
       },
       "128": {
-        "file_size_MiB": 814.9,
-        "compression": 2.5,
+        "file_size_MiB": 628.7,
+        "compression": 3.3,
         "throughputs_MiBps": {
-          "write": 293.7,
-          "read_roi_contiguous": 309.5,
-          "read_roi_random": 96.6,
-          "read_chunk_contiguous": 323.2,
-          "read_chunk_random": 44.8
+          "write": 920.0,
+          "read_roi_contiguous": 571.7,
+          "read_roi_random": 205.9,
+          "read_chunk_contiguous": 629.1,
+          "read_chunk_random": 83.8
         }
       }
     },
     "0.99": {
       "16": {
-        "file_size_MiB": 921.6,
-        "compression": 2.2,
+        "file_size_MiB": 37.5,
+        "compression": 54.6,
         "throughputs_MiBps": {
-          "write": 244.9,
-          "read_roi_contiguous": 283.8,
-          "read_roi_random": 243.5,
-          "read_chunk_contiguous": 155.0,
-          "read_chunk_random": 41.0
+          "write": 1011.8,
+          "read_roi_contiguous": 513.6,
+          "read_roi_random": 433.9,
+          "read_chunk_contiguous": 231.0,
+          "read_chunk_random": 58.7
         }
       },
       "32": {
-        "file_size_MiB": 825.7,
-        "compression": 2.5,
+        "file_size_MiB": 27.9,
+        "compression": 73.4,
         "throughputs_MiBps": {
-          "write": 285.4,
-          "read_roi_contiguous": 300.9,
-          "read_roi_random": 219.6,
-          "read_chunk_contiguous": 282.4,
-          "read_chunk_random": 40.3
+          "write": 1021.2,
+          "read_roi_contiguous": 527.7,
+          "read_roi_random": 391.3,
+          "read_chunk_contiguous": 455.4,
+          "read_chunk_random": 70.2
         }
       },
       "64": {
-        "file_size_MiB": 816.1,
-        "compression": 2.5,
+        "file_size_MiB": 26.6,
+        "compression": 77.0,
         "throughputs_MiBps": {
-          "write": 296.3,
-          "read_roi_contiguous": 295.5,
-          "read_roi_random": 161.1,
-          "read_chunk_contiguous": 288.0,
-          "read_chunk_random": 47.7
+          "write": 1199.1,
+          "read_roi_contiguous": 527.9,
+          "read_roi_random": 285.6,
+          "read_chunk_contiguous": 520.7,
+          "read_chunk_random": 76.0
         }
       },
       "128": {
-        "file_size_MiB": 814.9,
-        "compression": 2.5,
+        "file_size_MiB": 26.4,
+        "compression": 77.6,
         "throughputs_MiBps": {
-          "write": 300.3,
-          "read_roi_contiguous": 316.0,
-          "read_roi_random": 101.6,
-          "read_chunk_contiguous": 326.5,
-          "read_chunk_random": 43.4
+          "write": 1248.6,
+          "read_roi_contiguous": 546.3,
+          "read_roi_random": 179.5,
+          "read_chunk_contiguous": 601.2,
+          "read_chunk_random": 76.8
         }
       }
     }
@@ -746,185 +746,185 @@
   "blosc2_blosclz_l5": {
     "0.0": {
       "16": {
-        "file_size_MiB": 1175.1,
-        "compression": 1.7,
+        "file_size_MiB": 2091.4,
+        "compression": 1.0,
         "throughputs_MiBps": {
-          "write": 27.7,
-          "read_roi_contiguous": 221.7,
-          "read_roi_random": 177.0,
-          "read_chunk_contiguous": 124.6,
-          "read_chunk_random": 18.8
+          "write": 30.9,
+          "read_roi_contiguous": 435.5,
+          "read_roi_random": 366.0,
+          "read_chunk_contiguous": 193.8,
+          "read_chunk_random": 29.2
         }
       },
       "32": {
-        "file_size_MiB": 1026.1,
-        "compression": 2.0,
+        "file_size_MiB": 2053.4,
+        "compression": 1.0,
         "throughputs_MiBps": {
-          "write": 80.6,
-          "read_roi_contiguous": 290.3,
-          "read_roi_random": 200.9,
-          "read_chunk_contiguous": 252.5,
-          "read_chunk_random": 36.4
+          "write": 127.0,
+          "read_roi_contiguous": 632.0,
+          "read_roi_random": 493.0,
+          "read_chunk_contiguous": 517.9,
+          "read_chunk_random": 86.8
         }
       },
       "64": {
-        "file_size_MiB": 1009.8,
-        "compression": 2.0,
+        "file_size_MiB": 2048.7,
+        "compression": 1.0,
         "throughputs_MiBps": {
-          "write": 116.4,
-          "read_roi_contiguous": 301.9,
-          "read_roi_random": 171.7,
-          "read_chunk_contiguous": 314.4,
-          "read_chunk_random": 46.7
+          "write": 332.1,
+          "read_roi_contiguous": 734.9,
+          "read_roi_random": 437.4,
+          "read_chunk_contiguous": 730.1,
+          "read_chunk_random": 121.0
         }
       },
       "128": {
-        "file_size_MiB": 1009.3,
-        "compression": 2.0,
+        "file_size_MiB": 2048.1,
+        "compression": 1.0,
         "throughputs_MiBps": {
-          "write": 116.2,
-          "read_roi_contiguous": 278.1,
-          "read_roi_random": 90.6,
-          "read_chunk_contiguous": 296.8,
-          "read_chunk_random": 41.4
+          "write": 365.8,
+          "read_roi_contiguous": 595.7,
+          "read_roi_random": 197.4,
+          "read_chunk_contiguous": 626.3,
+          "read_chunk_random": 87.1
         }
       }
     },
     "0.33": {
       "16": {
-        "file_size_MiB": 1175.1,
-        "compression": 1.7,
+        "file_size_MiB": 1415.4,
+        "compression": 1.4,
         "throughputs_MiBps": {
-          "write": 27.3,
-          "read_roi_contiguous": 222.8,
-          "read_roi_random": 185.2,
-          "read_chunk_contiguous": 122.2,
-          "read_chunk_random": 15.3
+          "write": 30.5,
+          "read_roi_contiguous": 387.1,
+          "read_roi_random": 341.9,
+          "read_chunk_contiguous": 179.7,
+          "read_chunk_random": 22.8
         }
       },
       "32": {
-        "file_size_MiB": 1026.1,
-        "compression": 2.0,
+        "file_size_MiB": 1378.1,
+        "compression": 1.5,
         "throughputs_MiBps": {
-          "write": 78.9,
-          "read_roi_contiguous": 281.7,
-          "read_roi_random": 195.1,
-          "read_chunk_contiguous": 256.1,
-          "read_chunk_random": 44.5
+          "write": 135.9,
+          "read_roi_contiguous": 624.2,
+          "read_roi_random": 484.2,
+          "read_chunk_contiguous": 506.3,
+          "read_chunk_random": 81.3
         }
       },
       "64": {
-        "file_size_MiB": 1009.8,
-        "compression": 2.0,
+        "file_size_MiB": 1373.7,
+        "compression": 1.5,
         "throughputs_MiBps": {
-          "write": 112.2,
-          "read_roi_contiguous": 300.9,
-          "read_roi_random": 167.0,
-          "read_chunk_contiguous": 314.0,
-          "read_chunk_random": 49.2
+          "write": 373.2,
+          "read_roi_contiguous": 785.3,
+          "read_roi_random": 455.4,
+          "read_chunk_contiguous": 780.8,
+          "read_chunk_random": 123.1
         }
       },
       "128": {
-        "file_size_MiB": 1009.3,
-        "compression": 2.0,
+        "file_size_MiB": 1536.1,
+        "compression": 1.3,
         "throughputs_MiBps": {
-          "write": 122.1,
-          "read_roi_contiguous": 286.1,
-          "read_roi_random": 93.0,
-          "read_chunk_contiguous": 295.4,
-          "read_chunk_random": 39.6
+          "write": 409.5,
+          "read_roi_contiguous": 509.2,
+          "read_roi_random": 172.3,
+          "read_chunk_contiguous": 590.9,
+          "read_chunk_random": 77.8
         }
       }
     },
     "0.66": {
       "16": {
-        "file_size_MiB": 1175.1,
-        "compression": 1.7,
+        "file_size_MiB": 744.8,
+        "compression": 2.7,
         "throughputs_MiBps": {
-          "write": 27.3,
-          "read_roi_contiguous": 201.8,
-          "read_roi_random": 178.7,
-          "read_chunk_contiguous": 125.0,
-          "read_chunk_random": 13.4
+          "write": 31.9,
+          "read_roi_contiguous": 355.7,
+          "read_roi_random": 294.7,
+          "read_chunk_contiguous": 171.7,
+          "read_chunk_random": 25.7
         }
       },
       "32": {
-        "file_size_MiB": 1026.1,
-        "compression": 2.0,
+        "file_size_MiB": 702.2,
+        "compression": 2.9,
         "throughputs_MiBps": {
-          "write": 75.1,
-          "read_roi_contiguous": 272.6,
-          "read_roi_random": 204.2,
-          "read_chunk_contiguous": 241.0,
-          "read_chunk_random": 40.6
+          "write": 154.1,
+          "read_roi_contiguous": 666.5,
+          "read_roi_random": 531.3,
+          "read_chunk_contiguous": 527.7,
+          "read_chunk_random": 86.5
         }
       },
       "64": {
-        "file_size_MiB": 1009.8,
-        "compression": 2.0,
+        "file_size_MiB": 768.6,
+        "compression": 2.7,
         "throughputs_MiBps": {
-          "write": 112.4,
-          "read_roi_contiguous": 320.3,
-          "read_roi_random": 170.1,
-          "read_chunk_contiguous": 318.8,
-          "read_chunk_random": 47.6
+          "write": 492.3,
+          "read_roi_contiguous": 885.2,
+          "read_roi_random": 538.7,
+          "read_chunk_contiguous": 869.5,
+          "read_chunk_random": 144.4
         }
       },
       "128": {
-        "file_size_MiB": 1009.3,
-        "compression": 2.0,
+        "file_size_MiB": 698.2,
+        "compression": 2.9,
         "throughputs_MiBps": {
-          "write": 119.3,
-          "read_roi_contiguous": 284.7,
-          "read_roi_random": 91.1,
-          "read_chunk_contiguous": 309.3,
-          "read_chunk_random": 39.8
+          "write": 507.6,
+          "read_roi_contiguous": 679.3,
+          "read_roi_random": 211.0,
+          "read_chunk_contiguous": 658.5,
+          "read_chunk_random": 85.0
         }
       }
     },
     "0.99": {
       "16": {
-        "file_size_MiB": 1175.1,
-        "compression": 1.7,
+        "file_size_MiB": 61.0,
+        "compression": 33.6,
         "throughputs_MiBps": {
-          "write": 26.3,
-          "read_roi_contiguous": 203.9,
-          "read_roi_random": 172.3,
-          "read_chunk_contiguous": 124.5,
-          "read_chunk_random": 22.4
+          "write": 32.0,
+          "read_roi_contiguous": 324.4,
+          "read_roi_random": 279.2,
+          "read_chunk_contiguous": 166.3,
+          "read_chunk_random": 23.1
         }
       },
       "32": {
-        "file_size_MiB": 1026.1,
-        "compression": 2.0,
+        "file_size_MiB": 26.2,
+        "compression": 78.2,
         "throughputs_MiBps": {
-          "write": 82.5,
-          "read_roi_contiguous": 267.9,
-          "read_roi_random": 196.9,
-          "read_chunk_contiguous": 253.9,
-          "read_chunk_random": 29.7
+          "write": 173.6,
+          "read_roi_contiguous": 665.0,
+          "read_roi_random": 512.9,
+          "read_chunk_contiguous": 533.4,
+          "read_chunk_random": 96.5
         }
       },
       "64": {
-        "file_size_MiB": 1009.8,
-        "compression": 2.0,
+        "file_size_MiB": 22.2,
+        "compression": 92.3,
         "throughputs_MiBps": {
-          "write": 120.7,
-          "read_roi_contiguous": 313.7,
-          "read_roi_random": 173.1,
-          "read_chunk_contiguous": 325.7,
-          "read_chunk_random": 43.5
+          "write": 652.5,
+          "read_roi_contiguous": 946.6,
+          "read_roi_random": 571.8,
+          "read_chunk_contiguous": 948.1,
+          "read_chunk_random": 167.5
         }
       },
       "128": {
-        "file_size_MiB": 1009.3,
-        "compression": 2.0,
+        "file_size_MiB": 22.7,
+        "compression": 90.2,
         "throughputs_MiBps": {
-          "write": 116.7,
-          "read_roi_contiguous": 284.4,
-          "read_roi_random": 94.6,
-          "read_chunk_contiguous": 314.6,
-          "read_chunk_random": 40.4
+          "write": 758.5,
+          "read_roi_contiguous": 694.4,
+          "read_roi_random": 252.8,
+          "read_chunk_contiguous": 792.0,
+          "read_chunk_random": 110.4
         }
       }
     }
@@ -932,185 +932,185 @@
   "blosc2_blosclz_l9": {
     "0.0": {
       "16": {
-        "file_size_MiB": 1174.9,
-        "compression": 1.7,
+        "file_size_MiB": 2091.4,
+        "compression": 1.0,
         "throughputs_MiBps": {
-          "write": 25.1,
-          "read_roi_contiguous": 221.5,
-          "read_roi_random": 188.5,
-          "read_chunk_contiguous": 116.4,
-          "read_chunk_random": 21.3
+          "write": 26.7,
+          "read_roi_contiguous": 398.0,
+          "read_roi_random": 337.8,
+          "read_chunk_contiguous": 175.1,
+          "read_chunk_random": 25.3
         }
       },
       "32": {
-        "file_size_MiB": 1025.3,
-        "compression": 2.0,
+        "file_size_MiB": 2053.4,
+        "compression": 1.0,
         "throughputs_MiBps": {
-          "write": 75.7,
-          "read_roi_contiguous": 269.4,
-          "read_roi_random": 201.3,
-          "read_chunk_contiguous": 247.8,
-          "read_chunk_random": 42.3
+          "write": 138.7,
+          "read_roi_contiguous": 537.1,
+          "read_roi_random": 418.7,
+          "read_chunk_contiguous": 444.9,
+          "read_chunk_random": 72.7
         }
       },
       "64": {
-        "file_size_MiB": 1004.2,
-        "compression": 2.0,
+        "file_size_MiB": 2048.7,
+        "compression": 1.0,
         "throughputs_MiBps": {
-          "write": 115.3,
-          "read_roi_contiguous": 284.7,
-          "read_roi_random": 161.1,
-          "read_chunk_contiguous": 306.1,
-          "read_chunk_random": 48.2
+          "write": 381.7,
+          "read_roi_contiguous": 752.8,
+          "read_roi_random": 421.9,
+          "read_chunk_contiguous": 735.6,
+          "read_chunk_random": 110.9
         }
       },
       "128": {
-        "file_size_MiB": 1002.2,
-        "compression": 2.0,
+        "file_size_MiB": 2002.5,
+        "compression": 1.0,
         "throughputs_MiBps": {
-          "write": 139.3,
-          "read_roi_contiguous": 323.5,
-          "read_roi_random": 108.9,
-          "read_chunk_contiguous": 372.6,
-          "read_chunk_random": 47.2
+          "write": 305.3,
+          "read_roi_contiguous": 699.8,
+          "read_roi_random": 249.7,
+          "read_chunk_contiguous": 769.2,
+          "read_chunk_random": 106.6
         }
       }
     },
     "0.33": {
       "16": {
-        "file_size_MiB": 1174.9,
-        "compression": 1.7,
+        "file_size_MiB": 1415.4,
+        "compression": 1.4,
         "throughputs_MiBps": {
-          "write": 24.7,
-          "read_roi_contiguous": 219.6,
-          "read_roi_random": 179.6,
-          "read_chunk_contiguous": 115.7,
-          "read_chunk_random": 19.1
+          "write": 31.0,
+          "read_roi_contiguous": 377.7,
+          "read_roi_random": 334.0,
+          "read_chunk_contiguous": 179.8,
+          "read_chunk_random": 25.8
         }
       },
       "32": {
-        "file_size_MiB": 1025.3,
-        "compression": 2.0,
+        "file_size_MiB": 1378.1,
+        "compression": 1.5,
         "throughputs_MiBps": {
-          "write": 75.9,
-          "read_roi_contiguous": 274.2,
-          "read_roi_random": 219.7,
-          "read_chunk_contiguous": 244.2,
-          "read_chunk_random": 49.8
+          "write": 156.1,
+          "read_roi_contiguous": 584.8,
+          "read_roi_random": 440.9,
+          "read_chunk_contiguous": 481.8,
+          "read_chunk_random": 75.8
         }
       },
       "64": {
-        "file_size_MiB": 1004.2,
-        "compression": 2.0,
+        "file_size_MiB": 1373.7,
+        "compression": 1.5,
         "throughputs_MiBps": {
-          "write": 123.9,
-          "read_roi_contiguous": 300.3,
-          "read_roi_random": 159.4,
-          "read_chunk_contiguous": 304.0,
-          "read_chunk_random": 44.6
+          "write": 418.5,
+          "read_roi_contiguous": 806.1,
+          "read_roi_random": 461.3,
+          "read_chunk_contiguous": 802.6,
+          "read_chunk_random": 128.3
         }
       },
       "128": {
-        "file_size_MiB": 1002.2,
-        "compression": 2.0,
+        "file_size_MiB": 1350.5,
+        "compression": 1.5,
         "throughputs_MiBps": {
-          "write": 137.0,
-          "read_roi_contiguous": 348.3,
-          "read_roi_random": 111.0,
-          "read_chunk_contiguous": 368.1,
-          "read_chunk_random": 49.2
+          "write": 377.3,
+          "read_roi_contiguous": 779.2,
+          "read_roi_random": 265.3,
+          "read_chunk_contiguous": 869.8,
+          "read_chunk_random": 124.4
         }
       }
     },
     "0.66": {
       "16": {
-        "file_size_MiB": 1174.9,
-        "compression": 1.7,
+        "file_size_MiB": 738.2,
+        "compression": 2.8,
         "throughputs_MiBps": {
-          "write": 24.7,
-          "read_roi_contiguous": 209.4,
-          "read_roi_random": 181.8,
-          "read_chunk_contiguous": 122.0,
-          "read_chunk_random": 18.0
+          "write": 32.2,
+          "read_roi_contiguous": 349.4,
+          "read_roi_random": 293.4,
+          "read_chunk_contiguous": 174.8,
+          "read_chunk_random": 25.9
         }
       },
       "32": {
-        "file_size_MiB": 1025.3,
-        "compression": 2.0,
+        "file_size_MiB": 702.2,
+        "compression": 2.9,
         "throughputs_MiBps": {
-          "write": 69.7,
-          "read_roi_contiguous": 275.3,
-          "read_roi_random": 219.9,
-          "read_chunk_contiguous": 251.8,
-          "read_chunk_random": 32.4
+          "write": 169.4,
+          "read_roi_contiguous": 631.3,
+          "read_roi_random": 492.4,
+          "read_chunk_contiguous": 493.0,
+          "read_chunk_random": 87.5
         }
       },
       "64": {
-        "file_size_MiB": 1004.2,
-        "compression": 2.0,
+        "file_size_MiB": 697.6,
+        "compression": 2.9,
         "throughputs_MiBps": {
-          "write": 126.7,
-          "read_roi_contiguous": 312.7,
-          "read_roi_random": 168.3,
-          "read_chunk_contiguous": 307.3,
-          "read_chunk_random": 43.5
+          "write": 479.9,
+          "read_roi_contiguous": 857.0,
+          "read_roi_random": 521.2,
+          "read_chunk_contiguous": 884.3,
+          "read_chunk_random": 132.9
         }
       },
       "128": {
-        "file_size_MiB": 1002.2,
-        "compression": 2.0,
+        "file_size_MiB": 686.5,
+        "compression": 3.0,
         "throughputs_MiBps": {
-          "write": 137.2,
-          "read_roi_contiguous": 353.1,
-          "read_roi_random": 111.4,
-          "read_chunk_contiguous": 387.8,
-          "read_chunk_random": 48.6
+          "write": 537.0,
+          "read_roi_contiguous": 880.4,
+          "read_roi_random": 346.6,
+          "read_chunk_contiguous": 1048.1,
+          "read_chunk_random": 149.3
         }
       }
     },
     "0.99": {
       "16": {
-        "file_size_MiB": 1174.9,
-        "compression": 1.7,
+        "file_size_MiB": 61.0,
+        "compression": 33.6,
         "throughputs_MiBps": {
-          "write": 24.4,
-          "read_roi_contiguous": 210.0,
-          "read_roi_random": 177.2,
-          "read_chunk_contiguous": 122.2,
-          "read_chunk_random": 23.3
+          "write": 34.2,
+          "read_roi_contiguous": 326.5,
+          "read_roi_random": 276.8,
+          "read_chunk_contiguous": 168.1,
+          "read_chunk_random": 22.4
         }
       },
       "32": {
-        "file_size_MiB": 1025.3,
-        "compression": 2.0,
+        "file_size_MiB": 26.2,
+        "compression": 78.2,
         "throughputs_MiBps": {
-          "write": 78.8,
-          "read_roi_contiguous": 261.4,
-          "read_roi_random": 197.4,
-          "read_chunk_contiguous": 241.5,
-          "read_chunk_random": 27.8
+          "write": 186.8,
+          "read_roi_contiguous": 640.7,
+          "read_roi_random": 506.5,
+          "read_chunk_contiguous": 530.8,
+          "read_chunk_random": 78.6
         }
       },
       "64": {
-        "file_size_MiB": 1004.2,
-        "compression": 2.0,
+        "file_size_MiB": 22.2,
+        "compression": 92.3,
         "throughputs_MiBps": {
-          "write": 125.8,
-          "read_roi_contiguous": 299.3,
-          "read_roi_random": 159.8,
-          "read_chunk_contiguous": 323.7,
-          "read_chunk_random": 43.6
+          "write": 628.4,
+          "read_roi_contiguous": 969.1,
+          "read_roi_random": 603.8,
+          "read_chunk_contiguous": 979.4,
+          "read_chunk_random": 164.0
         }
       },
       "128": {
-        "file_size_MiB": 1002.2,
-        "compression": 2.0,
+        "file_size_MiB": 22.5,
+        "compression": 91.0,
         "throughputs_MiBps": {
-          "write": 134.3,
-          "read_roi_contiguous": 323.2,
-          "read_roi_random": 107.0,
-          "read_chunk_contiguous": 391.2,
-          "read_chunk_random": 49.6
+          "write": 988.3,
+          "read_roi_contiguous": 1020.0,
+          "read_roi_random": 415.4,
+          "read_chunk_contiguous": 1253.7,
+          "read_chunk_random": 185.9
         }
       }
     }
@@ -1118,185 +1118,185 @@
   "blosc2_lz4_l5": {
     "0.0": {
       "16": {
-        "file_size_MiB": 1040.0,
-        "compression": 2.0,
+        "file_size_MiB": 1977.4,
+        "compression": 1.0,
         "throughputs_MiBps": {
-          "write": 29.9,
-          "read_roi_contiguous": 236.5,
-          "read_roi_random": 183.8,
-          "read_chunk_contiguous": 126.1,
-          "read_chunk_random": 12.5
+          "write": 31.9,
+          "read_roi_contiguous": 376.1,
+          "read_roi_random": 319.6,
+          "read_chunk_contiguous": 180.4,
+          "read_chunk_random": 24.8
         }
       },
       "32": {
-        "file_size_MiB": 896.4,
-        "compression": 2.3,
+        "file_size_MiB": 1904.4,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 117.5,
-          "read_roi_contiguous": 290.7,
-          "read_roi_random": 213.6,
-          "read_chunk_contiguous": 262.6,
-          "read_chunk_random": 48.5
+          "write": 147.2,
+          "read_roi_contiguous": 514.7,
+          "read_roi_random": 386.5,
+          "read_chunk_contiguous": 424.2,
+          "read_chunk_random": 71.9
         }
       },
       "64": {
-        "file_size_MiB": 875.6,
-        "compression": 2.3,
+        "file_size_MiB": 1878.4,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 213.1,
-          "read_roi_contiguous": 369.7,
-          "read_roi_random": 198.7,
-          "read_chunk_contiguous": 355.0,
-          "read_chunk_random": 52.2
+          "write": 375.8,
+          "read_roi_contiguous": 698.5,
+          "read_roi_random": 395.6,
+          "read_chunk_contiguous": 656.3,
+          "read_chunk_random": 85.1
         }
       },
       "128": {
-        "file_size_MiB": 875.0,
-        "compression": 2.3,
+        "file_size_MiB": 1877.8,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 252.5,
-          "read_roi_contiguous": 332.0,
-          "read_roi_random": 108.8,
-          "read_chunk_contiguous": 361.1,
-          "read_chunk_random": 48.9
+          "write": 423.9,
+          "read_roi_contiguous": 574.6,
+          "read_roi_random": 194.8,
+          "read_chunk_contiguous": 617.5,
+          "read_chunk_random": 82.5
         }
       }
     },
     "0.33": {
       "16": {
-        "file_size_MiB": 1040.0,
-        "compression": 2.0,
+        "file_size_MiB": 1338.4,
+        "compression": 1.5,
         "throughputs_MiBps": {
-          "write": 30.2,
-          "read_roi_contiguous": 219.7,
-          "read_roi_random": 192.4,
-          "read_chunk_contiguous": 124.7,
-          "read_chunk_random": 16.4
+          "write": 31.8,
+          "read_roi_contiguous": 359.4,
+          "read_roi_random": 313.7,
+          "read_chunk_contiguous": 173.0,
+          "read_chunk_random": 24.7
         }
       },
       "32": {
-        "file_size_MiB": 896.4,
-        "compression": 2.3,
+        "file_size_MiB": 1277.7,
+        "compression": 1.6,
         "throughputs_MiBps": {
-          "write": 118.1,
-          "read_roi_contiguous": 295.7,
-          "read_roi_random": 209.0,
-          "read_chunk_contiguous": 272.9,
-          "read_chunk_random": 41.8
+          "write": 158.9,
+          "read_roi_contiguous": 549.8,
+          "read_roi_random": 405.9,
+          "read_chunk_contiguous": 441.1,
+          "read_chunk_random": 58.4
         }
       },
       "64": {
-        "file_size_MiB": 875.6,
-        "compression": 2.3,
+        "file_size_MiB": 1259.8,
+        "compression": 1.6,
         "throughputs_MiBps": {
-          "write": 215.1,
-          "read_roi_contiguous": 364.6,
-          "read_roi_random": 184.5,
-          "read_chunk_contiguous": 374.4,
-          "read_chunk_random": 52.6
+          "write": 450.8,
+          "read_roi_contiguous": 763.9,
+          "read_roi_random": 449.3,
+          "read_chunk_contiguous": 775.1,
+          "read_chunk_random": 115.3
         }
       },
       "128": {
-        "file_size_MiB": 875.0,
-        "compression": 2.3,
+        "file_size_MiB": 1260.1,
+        "compression": 1.6,
         "throughputs_MiBps": {
-          "write": 235.5,
-          "read_roi_contiguous": 331.9,
-          "read_roi_random": 111.0,
-          "read_chunk_contiguous": 361.8,
-          "read_chunk_random": 47.3
+          "write": 505.6,
+          "read_roi_contiguous": 603.8,
+          "read_roi_random": 206.2,
+          "read_chunk_contiguous": 675.3,
+          "read_chunk_random": 96.1
         }
       }
     },
     "0.66": {
       "16": {
-        "file_size_MiB": 1040.0,
-        "compression": 2.0,
+        "file_size_MiB": 698.3,
+        "compression": 2.9,
         "throughputs_MiBps": {
-          "write": 29.6,
-          "read_roi_contiguous": 226.4,
-          "read_roi_random": 186.3,
-          "read_chunk_contiguous": 123.5,
-          "read_chunk_random": 12.3
+          "write": 32.6,
+          "read_roi_contiguous": 335.0,
+          "read_roi_random": 281.1,
+          "read_chunk_contiguous": 169.7,
+          "read_chunk_random": 24.8
         }
       },
       "32": {
-        "file_size_MiB": 896.4,
-        "compression": 2.3,
+        "file_size_MiB": 651.2,
+        "compression": 3.1,
         "throughputs_MiBps": {
-          "write": 121.1,
-          "read_roi_contiguous": 272.8,
-          "read_roi_random": 221.3,
-          "read_chunk_contiguous": 275.0,
-          "read_chunk_random": 53.8
+          "write": 170.9,
+          "read_roi_contiguous": 595.3,
+          "read_roi_random": 473.8,
+          "read_chunk_contiguous": 482.7,
+          "read_chunk_random": 82.4
         }
       },
       "64": {
-        "file_size_MiB": 875.6,
-        "compression": 2.3,
+        "file_size_MiB": 640.0,
+        "compression": 3.2,
         "throughputs_MiBps": {
-          "write": 214.3,
-          "read_roi_contiguous": 370.7,
-          "read_roi_random": 205.9,
-          "read_chunk_contiguous": 368.0,
-          "read_chunk_random": 55.2
+          "write": 543.0,
+          "read_roi_contiguous": 869.7,
+          "read_roi_random": 534.4,
+          "read_chunk_contiguous": 872.4,
+          "read_chunk_random": 146.2
         }
       },
       "128": {
-        "file_size_MiB": 875.0,
-        "compression": 2.3,
+        "file_size_MiB": 640.7,
+        "compression": 3.2,
         "throughputs_MiBps": {
-          "write": 248.3,
-          "read_roi_contiguous": 326.4,
-          "read_roi_random": 105.8,
-          "read_chunk_contiguous": 359.4,
-          "read_chunk_random": 48.0
+          "write": 612.7,
+          "read_roi_contiguous": 656.0,
+          "read_roi_random": 237.7,
+          "read_chunk_contiguous": 759.3,
+          "read_chunk_random": 103.1
         }
       }
     },
     "0.99": {
       "16": {
-        "file_size_MiB": 1040.0,
-        "compression": 2.0,
+        "file_size_MiB": 59.5,
+        "compression": 34.4,
         "throughputs_MiBps": {
-          "write": 29.5,
-          "read_roi_contiguous": 225.3,
-          "read_roi_random": 180.3,
-          "read_chunk_contiguous": 127.3,
-          "read_chunk_random": 24.3
+          "write": 33.1,
+          "read_roi_contiguous": 318.9,
+          "read_roi_random": 277.6,
+          "read_chunk_contiguous": 169.6,
+          "read_chunk_random": 22.3
         }
       },
       "32": {
-        "file_size_MiB": 896.4,
-        "compression": 2.3,
+        "file_size_MiB": 24.6,
+        "compression": 83.3,
         "throughputs_MiBps": {
-          "write": 117.6,
-          "read_roi_contiguous": 299.2,
-          "read_roi_random": 218.4,
-          "read_chunk_contiguous": 275.1,
-          "read_chunk_random": 51.5
+          "write": 183.9,
+          "read_roi_contiguous": 635.1,
+          "read_roi_random": 491.5,
+          "read_chunk_contiguous": 508.2,
+          "read_chunk_random": 89.4
         }
       },
       "64": {
-        "file_size_MiB": 875.6,
-        "compression": 2.3,
+        "file_size_MiB": 20.5,
+        "compression": 99.9,
         "throughputs_MiBps": {
-          "write": 213.0,
-          "read_roi_contiguous": 379.5,
-          "read_roi_random": 209.8,
-          "read_chunk_contiguous": 379.7,
-          "read_chunk_random": 51.4
+          "write": 708.0,
+          "read_roi_contiguous": 982.9,
+          "read_roi_random": 613.7,
+          "read_chunk_contiguous": 991.9,
+          "read_chunk_random": 168.9
         }
       },
       "128": {
-        "file_size_MiB": 875.0,
-        "compression": 2.3,
+        "file_size_MiB": 21.1,
+        "compression": 97.1,
         "throughputs_MiBps": {
-          "write": 234.0,
-          "read_roi_contiguous": 335.2,
-          "read_roi_random": 103.8,
-          "read_chunk_contiguous": 349.8,
-          "read_chunk_random": 45.2
+          "write": 805.1,
+          "read_roi_contiguous": 738.0,
+          "read_roi_random": 266.5,
+          "read_chunk_contiguous": 866.1,
+          "read_chunk_random": 122.4
         }
       }
     }
@@ -1304,185 +1304,185 @@
   "blosc2_lz4_l9": {
     "0.0": {
       "16": {
-        "file_size_MiB": 1040.0,
-        "compression": 2.0,
+        "file_size_MiB": 1977.4,
+        "compression": 1.0,
         "throughputs_MiBps": {
-          "write": 29.6,
-          "read_roi_contiguous": 213.6,
-          "read_roi_random": 184.0,
-          "read_chunk_contiguous": 127.3,
-          "read_chunk_random": 13.8
+          "write": 30.9,
+          "read_roi_contiguous": 373.1,
+          "read_roi_random": 310.3,
+          "read_chunk_contiguous": 176.4,
+          "read_chunk_random": 24.7
         }
       },
       "32": {
-        "file_size_MiB": 896.4,
-        "compression": 2.3,
+        "file_size_MiB": 1904.4,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 117.4,
-          "read_roi_contiguous": 300.1,
-          "read_roi_random": 213.3,
-          "read_chunk_contiguous": 271.1,
-          "read_chunk_random": 48.6
+          "write": 143.9,
+          "read_roi_contiguous": 512.0,
+          "read_roi_random": 389.6,
+          "read_chunk_contiguous": 414.5,
+          "read_chunk_random": 72.3
         }
       },
       "64": {
-        "file_size_MiB": 820.4,
-        "compression": 2.5,
+        "file_size_MiB": 1843.4,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 199.0,
-          "read_roi_contiguous": 368.2,
-          "read_roi_random": 193.7,
-          "read_chunk_contiguous": 369.7,
-          "read_chunk_random": 52.5
+          "write": 355.9,
+          "read_roi_contiguous": 668.6,
+          "read_roi_random": 383.5,
+          "read_chunk_contiguous": 656.4,
+          "read_chunk_random": 98.7
         }
       },
       "128": {
-        "file_size_MiB": 816.4,
-        "compression": 2.5,
+        "file_size_MiB": 1827.3,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 235.9,
-          "read_roi_contiguous": 441.3,
-          "read_roi_random": 150.6,
-          "read_chunk_contiguous": 466.2,
-          "read_chunk_random": 62.5
+          "write": 462.2,
+          "read_roi_contiguous": 724.9,
+          "read_roi_random": 255.7,
+          "read_chunk_contiguous": 821.3,
+          "read_chunk_random": 112.3
         }
       }
     },
     "0.33": {
       "16": {
-        "file_size_MiB": 1040.0,
-        "compression": 2.0,
+        "file_size_MiB": 1338.4,
+        "compression": 1.5,
         "throughputs_MiBps": {
-          "write": 29.2,
-          "read_roi_contiguous": 221.6,
-          "read_roi_random": 176.9,
-          "read_chunk_contiguous": 116.7,
-          "read_chunk_random": 23.5
+          "write": 31.1,
+          "read_roi_contiguous": 347.9,
+          "read_roi_random": 299.5,
+          "read_chunk_contiguous": 175.2,
+          "read_chunk_random": 23.9
         }
       },
       "32": {
-        "file_size_MiB": 896.4,
-        "compression": 2.3,
+        "file_size_MiB": 1277.7,
+        "compression": 1.6,
         "throughputs_MiBps": {
-          "write": 115.9,
-          "read_roi_contiguous": 294.9,
-          "read_roi_random": 220.1,
-          "read_chunk_contiguous": 269.8,
-          "read_chunk_random": 42.7
+          "write": 156.4,
+          "read_roi_contiguous": 553.1,
+          "read_roi_random": 411.9,
+          "read_chunk_contiguous": 444.1,
+          "read_chunk_random": 73.9
         }
       },
       "64": {
-        "file_size_MiB": 820.4,
-        "compression": 2.5,
+        "file_size_MiB": 1236.1,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 209.6,
-          "read_roi_contiguous": 349.0,
-          "read_roi_random": 188.7,
-          "read_chunk_contiguous": 348.0,
-          "read_chunk_random": 56.6
+          "write": 414.5,
+          "read_roi_contiguous": 721.2,
+          "read_roi_random": 395.9,
+          "read_chunk_contiguous": 716.0,
+          "read_chunk_random": 113.9
         }
       },
       "128": {
-        "file_size_MiB": 816.4,
-        "compression": 2.5,
+        "file_size_MiB": 1226.0,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 231.4,
-          "read_roi_contiguous": 411.0,
-          "read_roi_random": 141.4,
-          "read_chunk_contiguous": 444.4,
-          "read_chunk_random": 60.3
+          "write": 576.3,
+          "read_roi_contiguous": 785.7,
+          "read_roi_random": 277.4,
+          "read_chunk_contiguous": 906.1,
+          "read_chunk_random": 127.7
         }
       }
     },
     "0.66": {
       "16": {
-        "file_size_MiB": 1040.0,
-        "compression": 2.0,
+        "file_size_MiB": 698.3,
+        "compression": 2.9,
         "throughputs_MiBps": {
-          "write": 29.0,
-          "read_roi_contiguous": 218.6,
-          "read_roi_random": 177.1,
-          "read_chunk_contiguous": 135.6,
-          "read_chunk_random": 20.5
+          "write": 31.9,
+          "read_roi_contiguous": 333.2,
+          "read_roi_random": 280.4,
+          "read_chunk_contiguous": 168.0,
+          "read_chunk_random": 22.8
         }
       },
       "32": {
-        "file_size_MiB": 896.4,
-        "compression": 2.3,
+        "file_size_MiB": 651.2,
+        "compression": 3.1,
         "throughputs_MiBps": {
-          "write": 111.4,
-          "read_roi_contiguous": 292.6,
-          "read_roi_random": 218.6,
-          "read_chunk_contiguous": 266.6,
-          "read_chunk_random": 49.1
+          "write": 169.6,
+          "read_roi_contiguous": 593.3,
+          "read_roi_random": 463.5,
+          "read_chunk_contiguous": 473.1,
+          "read_chunk_random": 71.4
         }
       },
       "64": {
-        "file_size_MiB": 820.4,
-        "compression": 2.5,
+        "file_size_MiB": 627.3,
+        "compression": 3.3,
         "throughputs_MiBps": {
-          "write": 195.8,
-          "read_roi_contiguous": 357.3,
-          "read_roi_random": 211.9,
-          "read_chunk_contiguous": 360.6,
-          "read_chunk_random": 58.1
+          "write": 503.8,
+          "read_roi_contiguous": 822.4,
+          "read_roi_random": 521.0,
+          "read_chunk_contiguous": 831.5,
+          "read_chunk_random": 127.9
         }
       },
       "128": {
-        "file_size_MiB": 816.4,
-        "compression": 2.5,
+        "file_size_MiB": 623.3,
+        "compression": 3.3,
         "throughputs_MiBps": {
-          "write": 239.8,
-          "read_roi_contiguous": 436.8,
-          "read_roi_random": 146.4,
-          "read_chunk_contiguous": 464.3,
-          "read_chunk_random": 65.9
+          "write": 731.8,
+          "read_roi_contiguous": 899.6,
+          "read_roi_random": 342.4,
+          "read_chunk_contiguous": 1056.0,
+          "read_chunk_random": 157.4
         }
       }
     },
     "0.99": {
       "16": {
-        "file_size_MiB": 1040.0,
-        "compression": 2.0,
+        "file_size_MiB": 59.5,
+        "compression": 34.4,
         "throughputs_MiBps": {
-          "write": 28.9,
-          "read_roi_contiguous": 207.0,
-          "read_roi_random": 177.3,
-          "read_chunk_contiguous": 132.9,
-          "read_chunk_random": 21.0
+          "write": 32.4,
+          "read_roi_contiguous": 318.3,
+          "read_roi_random": 272.0,
+          "read_chunk_contiguous": 165.7,
+          "read_chunk_random": 22.7
         }
       },
       "32": {
-        "file_size_MiB": 896.4,
-        "compression": 2.3,
+        "file_size_MiB": 24.6,
+        "compression": 83.3,
         "throughputs_MiBps": {
-          "write": 118.0,
-          "read_roi_contiguous": 298.2,
-          "read_roi_random": 220.9,
-          "read_chunk_contiguous": 268.7,
-          "read_chunk_random": 33.3
+          "write": 182.8,
+          "read_roi_contiguous": 646.8,
+          "read_roi_random": 496.1,
+          "read_chunk_contiguous": 502.0,
+          "read_chunk_random": 90.6
         }
       },
       "64": {
-        "file_size_MiB": 820.4,
-        "compression": 2.5,
+        "file_size_MiB": 20.2,
+        "compression": 101.4,
         "throughputs_MiBps": {
-          "write": 200.1,
-          "read_roi_contiguous": 359.7,
-          "read_roi_random": 207.9,
-          "read_chunk_contiguous": 372.2,
-          "read_chunk_random": 54.9
+          "write": 645.7,
+          "read_roi_contiguous": 955.2,
+          "read_roi_random": 601.2,
+          "read_chunk_contiguous": 957.3,
+          "read_chunk_random": 171.0
         }
       },
       "128": {
-        "file_size_MiB": 816.4,
-        "compression": 2.5,
+        "file_size_MiB": 20.5,
+        "compression": 99.9,
         "throughputs_MiBps": {
-          "write": 246.8,
-          "read_roi_contiguous": 430.6,
-          "read_roi_random": 142.0,
-          "read_chunk_contiguous": 468.7,
-          "read_chunk_random": 60.9
+          "write": 1044.3,
+          "read_roi_contiguous": 1045.7,
+          "read_roi_random": 416.9,
+          "read_chunk_contiguous": 1265.1,
+          "read_chunk_random": 183.6
         }
       }
     }
@@ -1490,185 +1490,185 @@
   "blosc2_lz4hc_l5": {
     "0.0": {
       "16": {
-        "file_size_MiB": 726.9,
-        "compression": 2.8,
+        "file_size_MiB": 1869.3,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 18.9,
-          "read_roi_contiguous": 238.1,
-          "read_roi_random": 221.2,
-          "read_chunk_contiguous": 143.4,
-          "read_chunk_random": 16.7
+          "write": 21.9,
+          "read_roi_contiguous": 373.8,
+          "read_roi_random": 320.7,
+          "read_chunk_contiguous": 179.7,
+          "read_chunk_random": 26.9
         }
       },
       "32": {
-        "file_size_MiB": 601.9,
-        "compression": 3.4,
+        "file_size_MiB": 1798.4,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 27.3,
-          "read_roi_contiguous": 382.2,
-          "read_roi_random": 303.8,
-          "read_chunk_contiguous": 336.4,
-          "read_chunk_random": 42.3
+          "write": 42.0,
+          "read_roi_contiguous": 523.2,
+          "read_roi_random": 399.6,
+          "read_chunk_contiguous": 422.5,
+          "read_chunk_random": 66.8
         }
       },
       "64": {
-        "file_size_MiB": 582.9,
-        "compression": 3.5,
+        "file_size_MiB": 1773.6,
+        "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 28.7,
-          "read_roi_contiguous": 519.6,
-          "read_roi_random": 293.3,
-          "read_chunk_contiguous": 523.2,
-          "read_chunk_random": 75.7
+          "write": 49.2,
+          "read_roi_contiguous": 713.4,
+          "read_roi_random": 414.6,
+          "read_chunk_contiguous": 701.5,
+          "read_chunk_random": 110.8
         }
       },
       "128": {
-        "file_size_MiB": 582.3,
-        "compression": 3.5,
+        "file_size_MiB": 1773.0,
+        "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 31.0,
-          "read_roi_contiguous": 448.9,
-          "read_roi_random": 159.4,
-          "read_chunk_contiguous": 491.3,
-          "read_chunk_random": 71.3
+          "write": 50.8,
+          "read_roi_contiguous": 576.3,
+          "read_roi_random": 199.1,
+          "read_chunk_contiguous": 647.2,
+          "read_chunk_random": 87.5
         }
       }
     },
     "0.33": {
       "16": {
-        "file_size_MiB": 726.9,
-        "compression": 2.8,
+        "file_size_MiB": 1266.3,
+        "compression": 1.6,
         "throughputs_MiBps": {
-          "write": 19.0,
-          "read_roi_contiguous": 260.5,
-          "read_roi_random": 217.0,
-          "read_chunk_contiguous": 139.6,
-          "read_chunk_random": 21.0
+          "write": 24.3,
+          "read_roi_contiguous": 353.5,
+          "read_roi_random": 310.5,
+          "read_chunk_contiguous": 175.2,
+          "read_chunk_random": 25.1
         }
       },
       "32": {
-        "file_size_MiB": 601.9,
-        "compression": 3.4,
+        "file_size_MiB": 1206.9,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 27.9,
-          "read_roi_contiguous": 389.1,
-          "read_roi_random": 290.4,
-          "read_chunk_contiguous": 358.1,
-          "read_chunk_random": 61.4
+          "write": 57.0,
+          "read_roi_contiguous": 557.1,
+          "read_roi_random": 400.3,
+          "read_chunk_contiguous": 446.4,
+          "read_chunk_random": 79.3
         }
       },
       "64": {
-        "file_size_MiB": 582.9,
-        "compression": 3.5,
+        "file_size_MiB": 1189.8,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 27.7,
-          "read_roi_contiguous": 494.9,
-          "read_roi_random": 282.9,
-          "read_chunk_contiguous": 521.1,
-          "read_chunk_random": 80.0
+          "write": 71.4,
+          "read_roi_contiguous": 782.7,
+          "read_roi_random": 444.6,
+          "read_chunk_contiguous": 769.5,
+          "read_chunk_random": 128.2
         }
       },
       "128": {
-        "file_size_MiB": 582.3,
-        "compression": 3.5,
+        "file_size_MiB": 1190.0,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 30.9,
-          "read_roi_contiguous": 450.4,
-          "read_roi_random": 153.2,
-          "read_chunk_contiguous": 498.1,
-          "read_chunk_random": 67.6
+          "write": 74.4,
+          "read_roi_contiguous": 627.2,
+          "read_roi_random": 215.4,
+          "read_chunk_contiguous": 697.2,
+          "read_chunk_random": 95.0
         }
       }
     },
     "0.66": {
       "16": {
-        "file_size_MiB": 726.9,
-        "compression": 2.8,
+        "file_size_MiB": 662.0,
+        "compression": 3.1,
         "throughputs_MiBps": {
-          "write": 19.1,
-          "read_roi_contiguous": 242.9,
-          "read_roi_random": 213.9,
-          "read_chunk_contiguous": 142.7,
-          "read_chunk_random": 22.5
+          "write": 27.6,
+          "read_roi_contiguous": 332.7,
+          "read_roi_random": 284.4,
+          "read_chunk_contiguous": 169.7,
+          "read_chunk_random": 25.2
         }
       },
       "32": {
-        "file_size_MiB": 601.9,
-        "compression": 3.4,
+        "file_size_MiB": 615.4,
+        "compression": 3.3,
         "throughputs_MiBps": {
-          "write": 28.2,
-          "read_roi_contiguous": 392.6,
-          "read_roi_random": 297.7,
-          "read_chunk_contiguous": 352.5,
-          "read_chunk_random": 58.8
+          "write": 85.8,
+          "read_roi_contiguous": 595.6,
+          "read_roi_random": 458.6,
+          "read_chunk_contiguous": 476.4,
+          "read_chunk_random": 76.8
         }
       },
       "64": {
-        "file_size_MiB": 582.9,
-        "compression": 3.5,
+        "file_size_MiB": 604.4,
+        "compression": 3.4,
         "throughputs_MiBps": {
-          "write": 28.3,
-          "read_roi_contiguous": 497.6,
-          "read_roi_random": 288.5,
-          "read_chunk_contiguous": 526.6,
-          "read_chunk_random": 82.6
+          "write": 129.4,
+          "read_roi_contiguous": 857.1,
+          "read_roi_random": 540.4,
+          "read_chunk_contiguous": 874.9,
+          "read_chunk_random": 149.4
         }
       },
       "128": {
-        "file_size_MiB": 582.3,
-        "compression": 3.5,
+        "file_size_MiB": 605.4,
+        "compression": 3.4,
         "throughputs_MiBps": {
-          "write": 31.2,
-          "read_roi_contiguous": 463.9,
-          "read_roi_random": 155.5,
-          "read_chunk_contiguous": 486.9,
-          "read_chunk_random": 71.4
+          "write": 138.4,
+          "read_roi_contiguous": 680.3,
+          "read_roi_random": 250.5,
+          "read_chunk_contiguous": 776.9,
+          "read_chunk_random": 103.5
         }
       }
     },
     "0.99": {
       "16": {
-        "file_size_MiB": 726.9,
-        "compression": 2.8,
+        "file_size_MiB": 58.6,
+        "compression": 34.9,
         "throughputs_MiBps": {
-          "write": 19.0,
-          "read_roi_contiguous": 254.9,
-          "read_roi_random": 218.8,
-          "read_chunk_contiguous": 144.6,
-          "read_chunk_random": 23.3
+          "write": 31.9,
+          "read_roi_contiguous": 317.9,
+          "read_roi_random": 272.7,
+          "read_chunk_contiguous": 168.0,
+          "read_chunk_random": 22.9
         }
       },
       "32": {
-        "file_size_MiB": 601.9,
-        "compression": 3.4,
+        "file_size_MiB": 23.7,
+        "compression": 86.4,
         "throughputs_MiBps": {
-          "write": 28.0,
-          "read_roi_contiguous": 380.1,
-          "read_roi_random": 302.9,
-          "read_chunk_contiguous": 314.5,
-          "read_chunk_random": 45.5
+          "write": 176.6,
+          "read_roi_contiguous": 639.3,
+          "read_roi_random": 487.4,
+          "read_chunk_contiguous": 508.9,
+          "read_chunk_random": 85.6
         }
       },
       "64": {
-        "file_size_MiB": 582.9,
-        "compression": 3.5,
+        "file_size_MiB": 19.6,
+        "compression": 104.5,
         "throughputs_MiBps": {
-          "write": 28.5,
-          "read_roi_contiguous": 473.9,
-          "read_roi_random": 299.3,
-          "read_chunk_contiguous": 541.4,
-          "read_chunk_random": 90.5
+          "write": 606.6,
+          "read_roi_contiguous": 961.9,
+          "read_roi_random": 593.0,
+          "read_chunk_contiguous": 970.1,
+          "read_chunk_random": 158.6
         }
       },
       "128": {
-        "file_size_MiB": 582.3,
-        "compression": 3.5,
+        "file_size_MiB": 20.2,
+        "compression": 101.4,
         "throughputs_MiBps": {
-          "write": 31.3,
-          "read_roi_contiguous": 428.1,
-          "read_roi_random": 148.5,
-          "read_chunk_contiguous": 474.3,
-          "read_chunk_random": 71.3
+          "write": 630.2,
+          "read_roi_contiguous": 740.2,
+          "read_roi_random": 271.5,
+          "read_chunk_contiguous": 860.0,
+          "read_chunk_random": 118.9
         }
       }
     }
@@ -1676,185 +1676,185 @@
   "blosc2_lz4hc_l9": {
     "0.0": {
       "16": {
-        "file_size_MiB": 704.4,
-        "compression": 2.9,
+        "file_size_MiB": 1862.9,
+        "compression": 1.1,
         "throughputs_MiBps": {
-          "write": 4.5,
-          "read_roi_contiguous": 274.5,
-          "read_roi_random": 239.4,
-          "read_chunk_contiguous": 142.2,
-          "read_chunk_random": 17.0
+          "write": 19.0,
+          "read_roi_contiguous": 376.4,
+          "read_roi_random": 327.7,
+          "read_chunk_contiguous": 177.5,
+          "read_chunk_random": 23.9
         }
       },
       "32": {
-        "file_size_MiB": 580.8,
-        "compression": 3.5,
+        "file_size_MiB": 1780.2,
+        "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 5.9,
-          "read_roi_contiguous": 405.4,
-          "read_roi_random": 310.6,
-          "read_chunk_contiguous": 362.2,
-          "read_chunk_random": 68.3
+          "write": 22.7,
+          "read_roi_contiguous": 521.8,
+          "read_roi_random": 404.5,
+          "read_chunk_contiguous": 431.7,
+          "read_chunk_random": 75.0
         }
       },
       "64": {
-        "file_size_MiB": 562.0,
-        "compression": 3.6,
+        "file_size_MiB": 1761.3,
+        "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 6.9,
-          "read_roi_contiguous": 492.3,
-          "read_roi_random": 278.4,
-          "read_chunk_contiguous": 517.7,
-          "read_chunk_random": 63.7
+          "write": 19.8,
+          "read_roi_contiguous": 658.0,
+          "read_roi_random": 375.4,
+          "read_chunk_contiguous": 647.1,
+          "read_chunk_random": 102.1
         }
       },
       "128": {
-        "file_size_MiB": 556.3,
-        "compression": 3.7,
+        "file_size_MiB": 1749.5,
+        "compression": 1.2,
         "throughputs_MiBps": {
-          "write": 7.1,
-          "read_roi_contiguous": 424.0,
-          "read_roi_random": 148.6,
-          "read_chunk_contiguous": 476.4,
-          "read_chunk_random": 64.6
+          "write": 18.2,
+          "read_roi_contiguous": 577.1,
+          "read_roi_random": 195.4,
+          "read_chunk_contiguous": 627.7,
+          "read_chunk_random": 85.3
         }
       }
     },
     "0.33": {
       "16": {
-        "file_size_MiB": 704.4,
-        "compression": 2.9,
+        "file_size_MiB": 1261.9,
+        "compression": 1.6,
         "throughputs_MiBps": {
-          "write": 4.5,
-          "read_roi_contiguous": 267.3,
-          "read_roi_random": 214.4,
-          "read_chunk_contiguous": 148.0,
-          "read_chunk_random": 25.0
+          "write": 22.0,
+          "read_roi_contiguous": 357.3,
+          "read_roi_random": 309.3,
+          "read_chunk_contiguous": 177.6,
+          "read_chunk_random": 22.1
         }
       },
       "32": {
-        "file_size_MiB": 580.8,
-        "compression": 3.5,
+        "file_size_MiB": 1194.8,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 6.0,
-          "read_roi_contiguous": 393.5,
-          "read_roi_random": 305.1,
-          "read_chunk_contiguous": 353.8,
-          "read_chunk_random": 66.0
+          "write": 32.2,
+          "read_roi_contiguous": 561.6,
+          "read_roi_random": 417.2,
+          "read_chunk_contiguous": 452.6,
+          "read_chunk_random": 74.9
         }
       },
       "64": {
-        "file_size_MiB": 562.0,
-        "compression": 3.6,
+        "file_size_MiB": 1181.7,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 6.8,
-          "read_roi_contiguous": 475.3,
-          "read_roi_random": 262.2,
-          "read_chunk_contiguous": 493.2,
-          "read_chunk_random": 83.2
+          "write": 29.9,
+          "read_roi_contiguous": 723.5,
+          "read_roi_random": 421.7,
+          "read_chunk_contiguous": 724.4,
+          "read_chunk_random": 107.9
         }
       },
       "128": {
-        "file_size_MiB": 556.3,
-        "compression": 3.7,
+        "file_size_MiB": 1174.1,
+        "compression": 1.7,
         "throughputs_MiBps": {
-          "write": 7.0,
-          "read_roi_contiguous": 443.7,
-          "read_roi_random": 146.5,
-          "read_chunk_contiguous": 476.0,
-          "read_chunk_random": 71.4
+          "write": 27.3,
+          "read_roi_contiguous": 614.1,
+          "read_roi_random": 213.5,
+          "read_chunk_contiguous": 678.9,
+          "read_chunk_random": 89.9
         }
       }
     },
     "0.66": {
       "16": {
-        "file_size_MiB": 704.4,
-        "compression": 2.9,
+        "file_size_MiB": 659.7,
+        "compression": 3.1,
         "throughputs_MiBps": {
-          "write": 4.5,
-          "read_roi_contiguous": 306.8,
-          "read_roi_random": 272.6,
-          "read_chunk_contiguous": 154.3,
-          "read_chunk_random": 20.5
+          "write": 26.0,
+          "read_roi_contiguous": 337.7,
+          "read_roi_random": 288.6,
+          "read_chunk_contiguous": 170.6,
+          "read_chunk_random": 22.5
         }
       },
       "32": {
-        "file_size_MiB": 580.8,
-        "compression": 3.5,
+        "file_size_MiB": 609.3,
+        "compression": 3.4,
         "throughputs_MiBps": {
-          "write": 6.0,
-          "read_roi_contiguous": 388.2,
-          "read_roi_random": 304.5,
-          "read_chunk_contiguous": 341.8,
-          "read_chunk_random": 64.6
+          "write": 54.5,
+          "read_roi_contiguous": 595.5,
+          "read_roi_random": 453.2,
+          "read_chunk_contiguous": 481.5,
+          "read_chunk_random": 79.3
         }
       },
       "64": {
-        "file_size_MiB": 562.0,
-        "compression": 3.6,
+        "file_size_MiB": 600.0,
+        "compression": 3.4,
         "throughputs_MiBps": {
-          "write": 6.9,
-          "read_roi_contiguous": 491.2,
-          "read_roi_random": 272.1,
-          "read_chunk_contiguous": 488.5,
-          "read_chunk_random": 70.2
+          "write": 56.7,
+          "read_roi_contiguous": 841.1,
+          "read_roi_random": 509.3,
+          "read_chunk_contiguous": 827.0,
+          "read_chunk_random": 145.5
         }
       },
       "128": {
-        "file_size_MiB": 556.3,
-        "compression": 3.7,
+        "file_size_MiB": 597.6,
+        "compression": 3.4,
         "throughputs_MiBps": {
-          "write": 7.0,
-          "read_roi_contiguous": 436.8,
-          "read_roi_random": 149.7,
-          "read_chunk_contiguous": 502.9,
-          "read_chunk_random": 63.8
+          "write": 54.4,
+          "read_roi_contiguous": 664.8,
+          "read_roi_random": 241.9,
+          "read_chunk_contiguous": 753.0,
+          "read_chunk_random": 99.8
         }
       }
     },
     "0.99": {
       "16": {
-        "file_size_MiB": 704.4,
-        "compression": 2.9,
+        "file_size_MiB": 58.5,
+        "compression": 35.0,
         "throughputs_MiBps": {
-          "write": 4.4,
-          "read_roi_contiguous": 310.2,
-          "read_roi_random": 231.3,
-          "read_chunk_contiguous": 138.8,
-          "read_chunk_random": 16.1
+          "write": 31.4,
+          "read_roi_contiguous": 316.1,
+          "read_roi_random": 276.8,
+          "read_chunk_contiguous": 166.1,
+          "read_chunk_random": 23.5
         }
       },
       "32": {
-        "file_size_MiB": 580.8,
-        "compression": 3.5,
+        "file_size_MiB": 23.6,
+        "compression": 86.8,
         "throughputs_MiBps": {
-          "write": 5.8,
-          "read_roi_contiguous": 378.2,
-          "read_roi_random": 319.9,
-          "read_chunk_contiguous": 397.8,
-          "read_chunk_random": 72.2
+          "write": 175.1,
+          "read_roi_contiguous": 633.0,
+          "read_roi_random": 481.0,
+          "read_chunk_contiguous": 503.5,
+          "read_chunk_random": 85.8
         }
       },
       "64": {
-        "file_size_MiB": 562.0,
-        "compression": 3.6,
+        "file_size_MiB": 19.7,
+        "compression": 104.0,
         "throughputs_MiBps": {
-          "write": 7.1,
-          "read_roi_contiguous": 523.1,
-          "read_roi_random": 314.7,
-          "read_chunk_contiguous": 534.8,
-          "read_chunk_random": 89.6
+          "write": 541.7,
+          "read_roi_contiguous": 951.5,
+          "read_roi_random": 585.1,
+          "read_chunk_contiguous": 942.7,
+          "read_chunk_random": 168.0
         }
       },
       "128": {
-        "file_size_MiB": 556.3,
-        "compression": 3.7,
+        "file_size_MiB": 20.1,
+        "compression": 101.9,
         "throughputs_MiBps": {
-          "write": 7.1,
-          "read_roi_contiguous": 453.2,
-          "read_roi_random": 155.5,
-          "read_chunk_contiguous": 498.5,
-          "read_chunk_random": 69.2
+          "write": 623.6,
+          "read_roi_contiguous": 716.8,
+          "read_roi_random": 265.9,
+          "read_chunk_contiguous": 851.6,
+          "read_chunk_random": 115.2
         }
       }
     }

@@ -4,11 +4,12 @@ import tqdm
 import time
 import json
 import tempfile
-import itertools
 import numpy as np
 
 import h5py
 import hdf5plugin
+
+from common_funcs import *
 
 # Consider a volume of some size
 # Use chunking (to actually get compression)
@@ -18,65 +19,6 @@ import hdf5plugin
 #   - Exactly the chunk size
 #
 # Measure (1) obtained file sizes and (2) throughput depending on the (a) chunk size and (b) the compression method
-
-# ---------------------------------------------------------------------------------------------------------------------------
-
-def sparsify_data(data, sparsity):
-  rng = np.random.default_rng(seed=42)
-  N = int(data.size * sparsity)
-  z = rng.integers(low=0, high=data.shape[0], endpoint=False, size=N)
-  y = rng.integers(low=0, high=data.shape[1], endpoint=False, size=N)
-  x = rng.integers(low=0, high=data.shape[2], endpoint=False, size=N)
-  data[z,y,x] = 0
-  return data
-
-# ---------------------------------------------------------------------------------------------------------------------------
-
-def throughput(size, secs): # float data; [MiB/s]
-  return np.around(size * 4 / 2**20 / secs, decimals=1)
-
-def time_secs(func, *args):
-  begin = time.perf_counter_ns()
-  func(*args)
-  end = time.perf_counter_ns()
-  return np.float64(end - begin) / 1e9
-
-def compression_factor(compressed_size_MiB, vol_size):
-  vol_rek_size = np.prod(vol_size) * 4 + 2048 # float data, in [bytes]
-  vol_rek_size_MiB = np.float64(vol_rek_size) / 2**20
-  return np.around(vol_rek_size_MiB / compressed_size_MiB, decimals=1)
-
-# ---------------------------------------------------------------------------------------------------------------------------
-
-def calculate_slices(roi_origin, roi_dim, tile_sizes):
-  roi_tile_beg = np.floor_divide(roi_origin,                    tile_sizes).astype(int)
-  roi_tile_end = np.floor_divide(np.add(roi_origin, roi_dim)-1, tile_sizes).astype(int)
-  num_tiles    = roi_tile_end - roi_tile_beg + 1
-  
-  sb = np.mod(roi_origin,                                               tile_sizes).astype(int)
-  se = np.mod(np.add(roi_origin, roi_dim) - (num_tiles-1) * tile_sizes, tile_sizes).astype(int) + 1
-  
-  tile_strs = []
-  slices = []
-  
-  for axis in range(len(roi_origin)):
-    slices_per_axis = [slice(sb[axis], se[axis] if num_tiles[axis] == 1 else None, None)]
-    tile_strs_axis  = [roi_tile_beg[axis]]
-    
-    if num_tiles[axis] > 1:
-      for t in range(roi_tile_beg[axis]+1, roi_tile_end[axis]):
-        slices_per_axis.append(slice(None))
-        tile_strs_axis.append(t)
-      slices_per_axis.append(slice(0, se[axis], None))
-      tile_strs_axis.append(roi_tile_end[axis]-1)
-    
-    slices.append(slices_per_axis)
-    tile_strs.append(tile_strs_axis)
-  
-  all_slices = itertools.product(*slices)
-  all_tiles  = itertools.product(*tile_strs)
-  return zip(all_slices, [ f"{z}{y}{x}" for z,y,x in all_tiles ])
-  
   
 
 def run(chunk_sizes, compression_method, data, sparsity, read_fixed_roi_size=(256,256,256)):
@@ -98,14 +40,6 @@ def run(chunk_sizes, compression_method, data, sparsity, read_fixed_roi_size=(25
     cache_size = int(np.ceil(float(chunk_size**3 * 4.0) / 2**20)) * 2**20 # at least one chunk, round up to full MiB, in [bytes]
     cs_data = {}
     
-    def _write_dataset():
-      with h5py.File(fname, "w") as f:
-        for z in range(multiple):
-          for y in range(multiple):
-            for x in range(multiple):
-              dset = f.create_dataset(f'data{z}{y}{x}', read_fixed_roi_size, dtype='f', chunks=tuple(chunk_size for _ in range(3)), shuffle=True, compression=compression_method)
-              dset[:] = sparsified_data
-
     def _read_roi(f, z, y, x, roi_size):
       data = []
       for file_slice, tile_str in calculate_slices([z, y, x], roi_size, read_fixed_roi_size):
@@ -114,7 +48,7 @@ def run(chunk_sizes, compression_method, data, sparsity, read_fixed_roi_size=(25
 
 
     # Write the dataset
-    write_time = time_secs(_write_dataset)
+    write_time = time_secs(write_file_multi, fname, sparsified_data, [multiple]*3, tuple(chunk_size for _ in range(3)), compression_method)
     
     # Read a Roi of fixed size, contiguous 
     avg_read_time_fixed_cont, _cnt = 0, 0
@@ -122,10 +56,8 @@ def run(chunk_sizes, compression_method, data, sparsity, read_fixed_roi_size=(25
       for z in tqdm.trange(0, multiple*2, leave=False):
         for y in tqdm.trange(0, multiple*2, leave=False):
           for x in tqdm.trange(0, multiple*2, leave=False):
-            z_off = z * read_fixed_roi_size[0] // 2
-            y_off = y * read_fixed_roi_size[1] // 2
-            x_off = x * read_fixed_roi_size[2] // 2
-            avg_read_time_fixed_cont += time_secs(_read_roi, f, z_off, y_off, x_off, read_fixed_roi_size)
+            roi_origin = np.multiply([z,y,x], read_fixed_roi_size) // 2
+            avg_read_time_fixed_cont += time_secs(read_roi_multi, f, roi_origin, read_fixed_roi_size, read_fixed_roi_size)
             _cnt += 1
     avg_read_time_fixed_cont /= _cnt
     
@@ -138,7 +70,7 @@ def run(chunk_sizes, compression_method, data, sparsity, read_fixed_roi_size=(25
     avg_read_time_fixed_random = 0
     with h5py.File(fname, 'r', rdcc_nbytes=cache_size) as f:
       for (z, y, x) in tqdm.tqdm(zip(pos_z, pos_y, pos_x), leave=False):
-        avg_read_time_fixed_random += time_secs(_read_roi, f, z, y, x, read_fixed_roi_size)
+        avg_read_time_fixed_random += time_secs(read_roi_multi, f, [z, y, x], read_fixed_roi_size, read_fixed_roi_size)
     avg_read_time_fixed_random /= N
     
     # Read the chunk size, contiguous
@@ -147,7 +79,7 @@ def run(chunk_sizes, compression_method, data, sparsity, read_fixed_roi_size=(25
       for z in tqdm.trange(0, vol_size[0], chunk_size, leave=False):
         for y in tqdm.trange(0, vol_size[1], chunk_size, leave=False):
           for x in tqdm.trange(0, vol_size[2], chunk_size, leave=False):
-            average_chunk_time_cont += time_secs(_read_roi, f, z, y, x, [chunk_size]*3)
+            average_chunk_time_cont += time_secs(read_roi_multi, f, [z,y,x], [chunk_size]*3, read_fixed_roi_size)
             _cnt += 1
     average_chunk_time_cont /= _cnt
     
@@ -160,7 +92,7 @@ def run(chunk_sizes, compression_method, data, sparsity, read_fixed_roi_size=(25
     average_chunk_time_random = 0
     with h5py.File(fname, 'r', rdcc_nbytes=cache_size) as f:
       for (z, y, x) in tqdm.tqdm(zip(pos_z, pos_y, pos_x), leave=False):
-        average_chunk_time_random += time_secs(_read_roi, f, z, y, x, [chunk_size]*3)
+        average_chunk_time_random += time_secs(read_roi_multi, f, [z, y, x], [chunk_size]*3, read_fixed_roi_size)
     average_chunk_time_random /= N
     
     file_size_MiB = round(float(os.path.getsize(fname)) / 2**20, 1)

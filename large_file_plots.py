@@ -1,4 +1,5 @@
 
+import json
 import re
 import numpy as np
 import matplotlib.pyplot as plt
@@ -15,7 +16,10 @@ import matplotlib.pyplot as plt
   ...
 """
 
-def large_file_plots(bench_data):
+def large_file_plots(bench_data_fname):
+  with open(bench_data_fname, 'r') as f:
+    bench_data = json.load(f)
+  
   # 1. throughputs over size 
   size_pattern = re.compile(r'[a-zA-Z0-9_]+_(\d)(\d)(\d)')
   def __get_size(key):
@@ -51,9 +55,4 @@ def large_file_plots(bench_data):
 
 if __name__ == '__main__':
   import sys
-  import json
-  
-  with open(sys.argv[1], "r") as f:
-    bench_data = json.load(f)
-  
-  large_file_plots(bench_data)
+  large_file_plots(sys.argv[1])
